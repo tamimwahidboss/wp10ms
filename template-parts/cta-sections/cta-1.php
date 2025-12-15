@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v1-cta-sec-h1']) || !empty($cta_btn_url) || !empty($cta_btn_text) ) :
 ?>
 
 <section class="cta-wrapper section-bg-2">
@@ -21,3 +23,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

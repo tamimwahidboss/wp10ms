@@ -1,7 +1,7 @@
 <?php
 // Create a FAQ section
 CSF::createSection( $prefix, array(
-    'parent' => 'about-page',
+    'parent' => 'home-page',
     'title'  => 'FAQ Section',
     'fields' => array(
         array(

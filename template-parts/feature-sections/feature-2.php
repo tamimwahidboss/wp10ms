@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($repeater_boxes) || !empty($options['v2-feature-top-title']) || !empty($options['v2-feature-h1']) ) :
 ?>
 
 <section class="features-wrapper features-2 section-padding">
@@ -46,3 +48,4 @@ $options = get_option( 'wp10ms_options' );
               d="M-0.000,232.999 C-0.000,232.999 239.131,-52.566 575.000,47.000 C910.869,146.565 1087.000,55.653 1231.000,19.999 C1375.000,-15.654 1800.820,-31.520 1915.000,232.999 C1445.000,232.999 -0.000,232.999 -0.000,232.999 Z"/>
     </svg>
 </section>
+<?php endif; ?>

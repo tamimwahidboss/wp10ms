@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-prosess-sec-h6']) || !empty($options['v3-prosess-sec-h2']) || !empty($repeater_prosesses) ) :
 ?>
 
 <section class="prosess-wrapper section-padding-3">
@@ -40,4 +42,4 @@ $options = get_option( 'wp10ms_options' );
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bg_shape_03.svg' ); ?>" alt>
     </div>
 </section>
-
+<?php endif; ?>

@@ -1,19 +1,25 @@
 <?php
 // about-page/about-us.php
 $options = get_option( 'wp10ms_options' );
+if( ! empty( $options['v5-about-banner']['url'] ) || !empty( $options['v5-about-yt']['url'] ) || !empty( $options['v5-about-a'] ) || !empty( $options['v5-about-h1'] ) || !empty( $options['v5-about-p'] ) || !empty( $options['v5-about-rate-rep'] ) || !empty( $repeater_boxes ) ) :
 ?>
 <section class="about-wrapper techex-landing-page"> <!-- index 5 - content-area -->
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-img" data-aos="fade-right">
+                    <?php if( !empty( $options['v5-about-banner']['url']  ) ) : ?>
                     <img src="<?php echo isset( $options['v5-about-banner']['url'] ) ? esc_url( $options['v5-about-banner']['url'] ) : ''; ?>" class="img-fluid" alt="">
-
+                    <?php
+                        endif;
+                        if ( !empty( $options['v5-about-yt']['url'] ) ) :
+                    ?>
                     <div class="video-play-btn" data-aos="fade-up" data-aos-delay="100">
                         <a href="<?php echo isset( $options['v5-about-yt']['url'] ) ? esc_url( $options['v5-about-yt']['url'] ) : '#'; ?>" class="play-video popup-video">
                             <i class="fas fa-play"></i>
                         </a>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -23,7 +29,7 @@ $options = get_option( 'wp10ms_options' );
                         <?php echo isset( $options['v5-about-a'] ) ? esc_html( $options['v5-about-a'] ) : ''; ?>
                     </a>
                     <h1 data-aos="fade-left" data-aos-delay="100">
-                        <?php echo isset( $options['v5-about-h1'] ) ? esc_html( $options['v5-about-h1'] ) : ''; ?>
+                        <?php echo isset( $options['v5-about-h1'] ) ? esc_attr( $options['v5-about-h1'] ) : ''; ?>
                     </h1>
                     <div data-aos="fade-left" data-aos-delay="150">
                         <p><?php echo isset( $options['v5-about-p'] ) ? esc_attr( $options['v5-about-p'] ) : ''; ?></p>
@@ -63,3 +69,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

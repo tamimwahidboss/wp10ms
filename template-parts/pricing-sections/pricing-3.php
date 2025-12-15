@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-price-sec-h6']) || !empty($options['v3-price-sec-h2']) || !empty($repeater_prices) ) :
 ?>
 
 <section class="price__wrapper section-padding-3">
@@ -64,3 +66,4 @@ $options = get_option( 'wp10ms_options' );
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/vector_03.svg' ); ?>" alt>
     </div>
 </section>
+<?php endif; ?>

@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v2-project-span']) || !empty($options['v2-project-p']) || !empty($options['v2-project-h1']) || post_type_exists( 'project' ) ) :
 ?>
 
 <section class="case-study-carousel-wrapper style-2">
@@ -56,3 +58,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

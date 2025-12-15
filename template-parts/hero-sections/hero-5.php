@@ -1,7 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
-?>
+
+if ( !empty( $options['v5-hero-slide-rep'] ) ) :?>
 
 <section class="hero-slide-wrapper techex-landing-page">
     <div class="hero-slider-active-2 owl-carousel owl-theme">
@@ -49,3 +50,4 @@ $options = get_option( 'wp10ms_options' );
         ?>
     </div>
 </section>
+<?php endif; ?>

@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v4-count-sec-rep'])) :
 ?>
 <section class="funfact-wrapper_2 section-bg bg-cover" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/fun_fac_02.png' ); ?>');">
     <div class="container">
@@ -21,3 +23,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

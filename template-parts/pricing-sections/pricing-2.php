@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v2-price-span']) || !empty($options['v2-price-p']) || !empty($options['v2-price-h1']) ) :
 ?>
 
 <section class="our-pricing-wrapper right-bg section-padding">
@@ -64,3 +66,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

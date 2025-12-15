@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v8-work-sec-banner']['url']) || !empty($options['v8-work-sec-vid']['url'] ) || !empty($options['v8-work-sec-h6']) ) :
 ?>
 
 <section class="service__wrapper">
@@ -55,3 +57,4 @@ $options = get_option( 'wp10ms_options' );
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bg_ser.png' ); ?>" alt="">
     </div>
 </section>
+<?php endif; ?>

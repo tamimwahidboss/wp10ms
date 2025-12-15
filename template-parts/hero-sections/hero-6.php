@@ -2,6 +2,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v6-hero-h2']) || !empty($options['v6-hero-banner']['url']) || !empty($options['v6-hero-btn-link']['url']) ) :
 ?>
 
 <section class="hero-wrapper section-padding-3">
@@ -43,3 +45,4 @@ $options = get_option( 'wp10ms_options' );
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/banner_02.svg' ); ?>" alt="">
     </div>
 </section>
+<?php endif; ?>

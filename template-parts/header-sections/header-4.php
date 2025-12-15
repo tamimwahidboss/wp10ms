@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['top-header-info-rep']) || !empty($options['top-header-social-rep']) || !empty($options['header-logo']['url']) ) :
 ?>
 
 <!-- welcome content start from here -->
@@ -63,6 +65,7 @@ $options = get_option( 'wp10ms_options' );
     <div class="main-header-wraper">
         <div class="container-fluid">
             <div class="row align-items-center justify-content-between">
+                <?php if ( ! empty( $options['header-logo']['url'] ) ) : ?>
                 <div class="header-logo">
                     <div class="logo">
                         <a href="<?php echo esc_url(site_url()); ?>">
@@ -70,6 +73,7 @@ $options = get_option( 'wp10ms_options' );
                         </a>
                     </div>
                 </div>
+                <?php endif; ?>
                 <div class="header-menu d-none d-xl-block">
                     <div class="main-menu">
                         <?php
@@ -82,6 +86,7 @@ $options = get_option( 'wp10ms_options' );
                     </div>
                 </div>
                 <div class="header-right d-flex align-items-center">
+                    <?php if ( ! empty( $options['header-btn']['url'] ) || ! empty( $options['header-btn']['text'] ) ) : ?>
                     <div class="header-btn-cta">
                         <div class="header-search">
                             <a class="search-toggle" data-selector=".header-search">
@@ -100,6 +105,7 @@ $options = get_option( 'wp10ms_options' );
                             <i class="icon-arrow-right-1"></i>
                         </a>
                     </div>
+                    <?php endif; ?>
                     <div class="mobile-nav-bar d-block ml-3 ml-sm-4 d-xl-none">
                         <div class="mobile-nav-wrap">
                             <div id="hamburger">
@@ -150,3 +156,4 @@ $options = get_option( 'wp10ms_options' );
 </header>
 
 <div class="header-gutter"></div>
+<?php endif; ?>

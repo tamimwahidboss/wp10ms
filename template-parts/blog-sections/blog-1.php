@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v1-blog-sec-p']) || !empty($options['v1-blog-sec-h1']) || post_type_exists( 'post' ) ) :
 ?>
 
 <section class="blog-section section-padding bg-contain" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/blog_bg.png' ); ?>')">
@@ -48,3 +50,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

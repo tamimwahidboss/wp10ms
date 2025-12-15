@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if ( !empty( $options['v6-service-title-span'] ) || !empty( $options['v6-service-h1'] ) ) :
 ?>
 
 <section class="our-service-provide techex-landing-page">
@@ -43,3 +45,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

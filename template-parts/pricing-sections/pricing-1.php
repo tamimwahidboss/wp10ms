@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v1-pricing-p']) || !empty($options['v1-pricing-h1']) || !empty($options['v1-pricing-rep']) ) :
 ?>
 
 <section class="our-pricing-wrapper section-bg section-padding">
@@ -19,6 +21,7 @@ $options = get_option( 'wp10ms_options' );
             $classActive = '';
             $planCounter = 1;
             $repeater_boxes = isset( $options['v1-pricing-rep'] ) ? $options['v1-pricing-rep'] : [];
+            if(!empty($repeater_boxes)) :
             foreach( $repeater_boxes as $repeater_box ) {
                 if ( $planCounter == 2 ) {
                     $classActive = 'active';
@@ -59,7 +62,9 @@ $options = get_option( 'wp10ms_options' );
                 <?php
                 $planCounter++;
             }
+            endif;
             ?>
         </div>
     </div>
 </section>
+<?php endif; ?>

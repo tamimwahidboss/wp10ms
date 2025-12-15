@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($repeater_boxes) ) :
 ?>
 <div class="faq-section section-padding"> 
     <div class="container">
@@ -71,3 +73,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </div>
+<?php endif; ?>

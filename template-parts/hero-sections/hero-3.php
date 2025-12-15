@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-hero-banner']['url']) || !empty($options['v3-hero-p']) || !empty($options['v3-hero-h1']) ) :
 ?>
 
 <section class="hero-slide-wrapper hero-3">
@@ -38,3 +40,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

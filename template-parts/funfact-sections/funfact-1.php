@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v1-funfact-box-rep']) ) :
 ?>
 <section class="funfact-wrapper text-white">
     <div class="container">
@@ -27,3 +29,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

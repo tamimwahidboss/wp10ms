@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-project-p']) || !empty($options['v3-project-h1']) || post_type_exists( 'project' ) ) :
 ?>
 
 <section class="project-case-study-wrapper clear-fix section-padding">
@@ -41,3 +43,4 @@ $options = get_option( 'wp10ms_options' );
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home4/ring.png' ); ?>" alt="">
     </div>
 </section>
+<?php endif; ?>

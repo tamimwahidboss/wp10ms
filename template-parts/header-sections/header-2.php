@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v2-head-off-logo']['url']) || !empty($options['v2-header-notice']) || !empty($options['v2-head-off-1h3']) ) :
 ?>
 
 <div class="offset-menu show">
@@ -160,3 +162,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </header>
+<?php endif; ?>

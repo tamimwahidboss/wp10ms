@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v2-funfact-box-rep']) ) :
 ?>
 
 <section class="our-achivement-fact section-bg bg-cover" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/funfact-line.png' ); ?>')">
@@ -28,3 +30,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

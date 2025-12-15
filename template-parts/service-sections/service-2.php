@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v2-service-p']) || !empty($options['v2-service-h1']) || !empty($repeater_boxes) ) :
 ?>
 
 <section class="services-wrapper service-2 section-padding section-bg bg-contain" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ) ?>/assets/img/circle-bg.png')">
@@ -64,3 +66,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

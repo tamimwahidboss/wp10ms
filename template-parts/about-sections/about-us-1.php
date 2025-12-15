@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if( !empty( $options['about-sec-title-p'] ) || !empty( $options['about-sec-title-h1'] ) || !empty( $options['about-sec-title-des'] ) || !empty( $options['about-sec-box-rep'] ) || !empty( $options['about-sec-banner']['url'] ) || !empty( $options['about-sec-ft-item-rep'] ) ) :
 ?>
     <section class="about-us-wrapper section-padding">
         <div class="container">
@@ -78,3 +80,4 @@ $options = get_option( 'wp10ms_options' );
             </div>
         </div>
     </section>
+    <?php endif; ?>

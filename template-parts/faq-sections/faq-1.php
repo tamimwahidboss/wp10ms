@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['faq-sec-banner']['url']) || !empty($options['faq-sec-title-p']) || !empty($options['faq-sec-title-h1']) ) :
 ?>
 <section class="faq-section section-padding">
     <div class="faq-bg bg-cover d-none d-lg-block" style="background-image: url('<?php echo isset( $options['faq-sec-banner']['url'] ) ? esc_url( $options['faq-sec-banner']['url'] ) : ''; ?>')"></div>
@@ -49,3 +51,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

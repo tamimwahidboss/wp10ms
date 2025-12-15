@@ -1,7 +1,7 @@
 <?php
 // Create a funfact section
 CSF::createSection( $prefix, array(
-    'parent' => 'about-page',
+    'parent' => 'home-page',
     'title'  => 'Funfact Section',
     'fields' => array(
         array(

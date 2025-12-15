@@ -1,7 +1,7 @@
 <?php
 // Create a Process Section
 CSF::createSection( $prefix, array(
-    'parent' => 'about-page',
+    'parent' => 'home-page',
     'title'  => 'Process Section',
     'fields' => array(
         array(

@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v7-secvice-sec-h6']) || !empty($options['v7-secvice-sec-h2']) || !empty($options['v7-service-repeater'] ) ) :
 ?>
 
 <section class="analytics-wrapper section-padding-3 bg-center bg-cover" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/service_bg.png' ); ?>');">
@@ -43,3 +45,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

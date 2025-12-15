@@ -1,5 +1,8 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v5-blog-sec-h6']) || !empty($options['v5-blog-sec-h2']) || post_type_exists( 'post' )) :
+
 ?>
 <section class="blog-section blog-wrapper section-padding-3 bg-cover bg-center" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/blog_bg_line.svg' ); ?>');">
     <div class="container">
@@ -163,5 +166,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
-
-
+<?php endif; ?>

@@ -1,6 +1,9 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-blog-p']) || !empty($options['v3-blog-h1']) || post_type_exists( 'post' )) :
+
 ?>
 
 <section class="blog-section section-padding">
@@ -52,3 +55,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

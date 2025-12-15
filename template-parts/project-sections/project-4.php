@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if ( ! empty( $options['v4-project-p'] ) || ! empty( $options['v4-project-h1'] ) || post_type_exists( 'project') ) :
 ?>
 
 <!-- index 5 - content-area -->
@@ -10,12 +12,18 @@ $options = get_option( 'wp10ms_options' );
         <div class="row">
             <div class="col-12">
                 <div class="section-title text-center">
+                    <?php if( !empty( $options['v4-project-p'] ) ) : ?>
                     <a class="theme-btn-sm mb-15" data-aos="fade-up">
                         <?php echo isset($options['v4-project-p']) ? esc_html($options['v4-project-p']) : ''; ?>
                     </a>
+                    <?php
+                        endif;
+                        if ( !empty( $options['v4-project-h1'] ) ) :
+                    ?>
                     <h1 data-aos="fade-up" data-aos-delay="100">
                         <?php echo isset($options['v4-project-h1']) ? esc_html($options['v4-project-h1']) : ''; ?>
                     </h1>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -65,3 +73,4 @@ $options = get_option( 'wp10ms_options' );
         ?>
     </div>
 </section>
+<?php endif; ?>

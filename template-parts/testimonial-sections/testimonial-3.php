@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-testimonial-p']) || !empty($options['v3-testimonial-h1']) || !empty($options['v3-testimonial-rep']) ) :
 ?>
 
 <!-- index 5 - content-area -->
@@ -48,3 +50,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

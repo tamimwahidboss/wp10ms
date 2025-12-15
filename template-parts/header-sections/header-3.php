@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-top-header-info-rep']) || !empty($options['v3-top-header-social-rep']) ) :
 ?>
 
 <header class="header-wrap header-4">
@@ -134,3 +136,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </header>
+<?php endif; ?>

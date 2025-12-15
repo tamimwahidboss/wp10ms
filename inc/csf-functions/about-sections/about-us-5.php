@@ -76,7 +76,7 @@ CSF::createSection( $prefix, array(
             'type'          => 'repeater',
             'title'         => 'About Button',
             'button_title'  => 'Add Button',
-            'max'           => 10, // Maximum number of buttons
+            'max'           => 2, // Maximum number of buttons
             'fields'        => array(
 
                 // Link field for button

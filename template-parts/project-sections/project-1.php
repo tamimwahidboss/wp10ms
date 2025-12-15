@@ -1,6 +1,8 @@
 <?php
 $options = get_option( 'wp10ms_options' );
 $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
+
+if(!empty($options['v1-project-p']) || !empty($options['v1-project-h1']) || post_type_exists( 'project' ) ) :
 ?>
 
 <section class="case-study-wrapper section-padding">
@@ -78,3 +80,4 @@ $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
         </div>
     </div>
 </section>
+<?php endif; ?>

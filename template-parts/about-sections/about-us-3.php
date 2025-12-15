@@ -1,6 +1,8 @@
 <?php
 // about-page/about-us.php
 $options = get_option( 'wp10ms_options' );
+
+if ( !empty( $options['v3-about-p'] ) || !empty( $options['v3-about-span'] ) || !empty( $options['v3-about-h1'] ) || !empty( $options['v3-about-box-rep'] ) || !empty( $options['v3-about-form-p'] ) || !empty( $options['v3-about-form-h1'] ) ) :
 ?>
 
 <section class="about-us-wrapper section-padding">
@@ -49,3 +51,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

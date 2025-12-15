@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v6-project-sec-h6']) || !empty($options['v6-project-sec-h2']) || !empty($options['v6-project-sec-btn-link']['url']) || post_type_exists( 'project' ) ) :
 ?>
 <section class="project-carousel-wrapper section-padding-3">
     <div class="container">
@@ -73,3 +75,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

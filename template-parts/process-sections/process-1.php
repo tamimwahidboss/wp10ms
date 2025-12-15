@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v1-prosess-span']) || !empty($options['v1-prosess-p']) || !empty($options['v1-prosess-sec-h1']) ) :
 ?>
 
 <section class="work-process-wrapper section-padding pt-0">
@@ -41,3 +43,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

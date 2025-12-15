@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v5-service-p']) || !empty($options['v5-service-h1']) || !empty($repeater_boxes) ) :
 ?>
 
 <section class="our-service-provide section-bg text-white section-padding">
@@ -39,3 +41,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

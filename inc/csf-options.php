@@ -135,31 +135,28 @@ if( class_exists( 'CSF' ) ) {
      */
     CSF::createSection( $prefix, array(
         'id'    => 'home-page',
-        'title' => 'Home Page',
+        'title' => 'Templates',
         'icon'  => 'fas fa-home',
     ) );
 
     // Declare the selected csf function files.
     CSF::createSection( $prefix, array(
         'parent' => 'home-page',
-        'title'  => 'Home Settings',
+        'title'  => 'Template Settings',
         'priority' => 1,
         'fields' => array_merge(
             wp10ms_csf_hero_select_func(),
             wp10ms_csf_feature_select_func(),
             wp10ms_csf_about_select_func(),
             wp10ms_csf_service_select_func(),
-            // wp10ms_csf_process_select_func(),
-            // wp10ms_csf_funfact_select_func(),
-            // wp10ms_csf_faq_select_func(),
-            // wp10ms_csf_team_select_func(),
+            wp10ms_csf_process_select_func(),
+            wp10ms_csf_funfact_select_func(),
+            wp10ms_csf_faq_select_func(),
+            wp10ms_csf_team_select_func(),
             wp10ms_csf_project_select_func(),
-            // wp10ms_csf_brand_select_func(),
             wp10ms_csf_pricing_select_func(),
             wp10ms_csf_testimonial_select_func(),
             wp10ms_csf_blog_select_func(),
-            // wp10ms_contact_select_func(),
-            // wp10ms_csf_cta_select_func(),
         ),
     ) );
 
@@ -330,54 +327,6 @@ if( class_exists( 'CSF' ) ) {
         include_once get_template_directory() . '/inc/csf-functions/blog-sections/blog-7.php';
     }
 
-    // Create a About page
-    CSF::createSection( $prefix, array(
-        'title' => 'About Page',
-        'id'    => 'about-page',
-        'icon'  => 'fas fa-pager',
-    ) );
-
-    // Declare the selected csf function files.
-    CSF::createSection( $prefix, array(
-        'parent' => 'about-page',
-        'title'  => 'About Settings',
-        'priority' => 1,
-        'fields' => array_merge(
-            wp10ms_csf_team_select_func(),
-            wp10ms_csf_faq_select_func(),
-            wp10ms_csf_process_select_func(),
-            wp10ms_csf_funfact_select_func(),
-        ),
-    ) );
-
-        // Attached team section csf code file path.
-        if ( isset( $options['team-select'] ) && $options['team-select'] === 'team-1' ) {
-            // Attached team-section-1 csf code file path.
-            include_once get_template_directory() . '/inc/csf-functions/team-sections/team-1.php';
-        } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-2' ) {
-            // Attached team-section-1 csf code file path.
-            include_once get_template_directory() . '/inc/csf-functions/team-sections/team-2.php';
-        } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-3' ) {
-            // Attached team-section-1 csf code file path.
-            include_once get_template_directory() . '/inc/csf-functions/team-sections/team-3.php';
-        } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-4' ) {
-            // Attached team-section-1 csf code file path.
-            include_once get_template_directory() . '/inc/csf-functions/team-sections/team-4.php';
-        } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-5' ) {
-            // Attached team-section-1 csf code file path.
-            include_once get_template_directory() . '/inc/csf-functions/team-sections/team-5.php';
-        }
-
-    // Attached faq section csf code file path.
-    if ( isset( $options['faq-select'] ) && $options['faq-select'] === 'faq-1' ) {
-        // Attached faq-section-1 csf code file path.
-        include_once get_template_directory() . '/inc/csf-functions/faq-sections/faq-1.php';
-    } elseif ( isset( $options['faq-select'] ) && $options['faq-select'] === 'faq-2' ) {
-        // Attached faq-section-1 csf code file path.
-        include_once get_template_directory() . '/inc/csf-functions/faq-sections/faq-2.php';
-    }
-
-
     // Attached process section csf code file path.
     if ( isset( $options['process-select'] ) && $options['process-select'] === 'process-1' ) {
         // Attached process-section-1 csf code file path.
@@ -389,8 +338,6 @@ if( class_exists( 'CSF' ) ) {
         // Attached process-section-1 csf code file path.
         include_once get_template_directory() . '/inc/csf-functions/process-sections/process-3.php';
     }
-
-
 
     // Attached funfact section csf code file path.
     if ( isset( $options['funfact-select'] ) && $options['funfact-select'] === 'funfact-1' ) {
@@ -406,6 +353,110 @@ if( class_exists( 'CSF' ) ) {
         // Attached funfact-section-6 csf code file path.
         include_once get_template_directory() . '/inc/csf-functions/funfact-sections/funfact-4.php';
     }
+
+    // Attached team section csf code file path.
+    if ( isset( $options['team-select'] ) && $options['team-select'] === 'team-1' ) {
+        // Attached team-section-1 csf code file path.
+        include_once get_template_directory() . '/inc/csf-functions/team-sections/team-1.php';
+    } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-2' ) {
+        // Attached team-section-1 csf code file path.
+        include_once get_template_directory() . '/inc/csf-functions/team-sections/team-2.php';
+    } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-3' ) {
+        // Attached team-section-1 csf code file path.
+        include_once get_template_directory() . '/inc/csf-functions/team-sections/team-3.php';
+    } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-4' ) {
+        // Attached team-section-1 csf code file path.
+        include_once get_template_directory() . '/inc/csf-functions/team-sections/team-4.php';
+    } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-5' ) {
+        // Attached team-section-1 csf code file path.
+        include_once get_template_directory() . '/inc/csf-functions/team-sections/team-5.php';
+    }
+
+    // Attached faq section csf code file path.
+    if ( isset( $options['faq-select'] ) && $options['faq-select'] === 'faq-1' ) {
+        // Attached faq-section-1 csf code file path.
+        include_once get_template_directory() . '/inc/csf-functions/faq-sections/faq-1.php';
+    } elseif ( isset( $options['faq-select'] ) && $options['faq-select'] === 'faq-2' ) {
+        // Attached faq-section-1 csf code file path.
+        include_once get_template_directory() . '/inc/csf-functions/faq-sections/faq-2.php';
+    }
+
+    // // Create a About page
+    // CSF::createSection( $prefix, array(
+    //     'title' => 'About Page',
+    //     'id'    => 'about-page',
+    //     'icon'  => 'fas fa-pager',
+    // ) );
+
+    // // Declare the selected csf function files.
+    // CSF::createSection( $prefix, array(
+    //     'parent' => 'about-page',
+    //     'title'  => 'About Settings',
+    //     'priority' => 1,
+    //     'fields' => array_merge(
+    //         wp10ms_csf_team_select_func(),
+    //         wp10ms_csf_faq_select_func(),
+    //         wp10ms_csf_process_select_func(),
+    //         wp10ms_csf_funfact_select_func(),
+    //     ),
+    // ) );
+
+    // // Attached team section csf code file path.
+    // if ( isset( $options['team-select'] ) && $options['team-select'] === 'team-1' ) {
+    //     // Attached team-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/team-sections/team-1.php';
+    // } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-2' ) {
+    //     // Attached team-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/team-sections/team-2.php';
+    // } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-3' ) {
+    //     // Attached team-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/team-sections/team-3.php';
+    // } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-4' ) {
+    //     // Attached team-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/team-sections/team-4.php';
+    // } elseif ( isset( $options['team-select'] ) && $options['team-select'] === 'team-5' ) {
+    //     // Attached team-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/team-sections/team-5.php';
+    // }
+
+    // // Attached faq section csf code file path.
+    // if ( isset( $options['faq-select'] ) && $options['faq-select'] === 'faq-1' ) {
+    //     // Attached faq-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/faq-sections/faq-1.php';
+    // } elseif ( isset( $options['faq-select'] ) && $options['faq-select'] === 'faq-2' ) {
+    //     // Attached faq-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/faq-sections/faq-2.php';
+    // }
+
+
+    // // Attached process section csf code file path.
+    // if ( isset( $options['process-select'] ) && $options['process-select'] === 'process-1' ) {
+    //     // Attached process-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/process-sections/process-1.php';
+    // } elseif ( isset( $options['process-select'] ) && $options['process-select'] === 'process-2' ) {
+    //     // Attached process-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/process-sections/process-2.php';
+    // } elseif ( isset( $options['process-select'] ) && $options['process-select'] === 'process-3' ) {
+    //     // Attached process-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/process-sections/process-3.php';
+    // }
+
+
+
+    // // Attached funfact section csf code file path.
+    // if ( isset( $options['funfact-select'] ) && $options['funfact-select'] === 'funfact-1' ) {
+    //     // Attached funfact-section-1 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/funfact-sections/funfact-1.php';
+    // } elseif ( isset( $options['funfact-select'] ) && $options['funfact-select'] === 'funfact-2' ) {
+    //     // Attached funfact-section-6 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/funfact-sections/funfact-2.php';
+    // } elseif ( isset( $options['funfact-select'] ) && $options['funfact-select'] === 'funfact-3' ) {
+    //     // Attached funfact-section-6 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/funfact-sections/funfact-3.php';
+    // } elseif ( isset( $options['funfact-select'] ) && $options['funfact-select'] === 'funfact-4' ) {
+    //     // Attached funfact-section-6 csf code file path.
+    //     include_once get_template_directory() . '/inc/csf-functions/funfact-sections/funfact-4.php';
+    // }
 
 
     // Create a footer section

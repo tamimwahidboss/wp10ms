@@ -82,7 +82,9 @@ function wp10ms_create_custom_post_type() {
         'rewrite'            => array( 'slug' => 'projects' ),
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
 		'taxonomies'         => array( 'project-category' ),
-        // 'show_in_rest'       => true, // Enable block editor support
+        'hierarchical'       => false,
+        'has_archive'        => false,
+        'show_in_rest'       => true, // Enable block editor support
     );
     
     register_post_type( 'project', $args );
@@ -92,17 +94,17 @@ add_action( 'init', 'wp10ms_create_custom_post_type' );
 // Register Custom Taxonomy
 function wp10ms_create_project_taxonomy() {
     $labels = array(
-        'name'              => _x( 'Project Categories', 'taxonomy general name', 'wp10ms' ),
-        'singular_name'     => _x( 'Project Category', 'taxonomy singular name', 'wp10ms' ),
-        'search_items'      => __( 'Search Project Categories', 'wp10ms' ),
-        'all_items'         => __( 'All Project Categories', 'wp10ms' ),
-        'parent_item'       => __( 'Parent Project Category', 'wp10ms' ),
-        'parent_item_colon' => __( 'Parent Project Category:', 'wp10ms' ),
-        'edit_item'         => __( 'Edit Project Category', 'wp10ms' ),
-        'update_item'       => __( 'Update Project Category', 'wp10ms' ),
-        'add_new_item'      => __( 'Add New Project Category', 'wp10ms' ),
-        'new_item_name'     => __( 'New Project Category Name', 'wp10ms' ),
-        'menu_name'         => __( 'Project Categories', 'wp10ms' ),
+        'name'              => _x( 'Categories', 'taxonomy general name', 'wp10ms' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name', 'wp10ms' ),
+        'search_items'      => __( 'Search Categories', 'wp10ms' ),
+        'all_items'         => __( 'All Categories', 'wp10ms' ),
+        'parent_item'       => __( 'Parent Category', 'wp10ms' ),
+        'parent_item_colon' => __( 'Parent Category:', 'wp10ms' ),
+        'edit_item'         => __( 'Edit Category', 'wp10ms' ),
+        'update_item'       => __( 'Update Category', 'wp10ms' ),
+        'add_new_item'      => __( 'Add New Category', 'wp10ms' ),
+        'new_item_name'     => __( 'New Category Name', 'wp10ms' ),
+        'menu_name'         => __( 'Categories', 'wp10ms' ),
     );
 
     $args = array(

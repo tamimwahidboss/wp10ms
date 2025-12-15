@@ -1,7 +1,7 @@
 <?php
 // Create a v4 count bar section
 CSF::createSection( $prefix, array(
-    'parent' => 'about-page',
+    'parent' => 'home-page',
     'title'  => 'Count Bar Section',
     'fields' => array(
         array(

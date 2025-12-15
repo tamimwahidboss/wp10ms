@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v2-contact-sec-h6']) || !empty($options['v2-contact-sec-h2']) || !empty($options['v2-contact-shortcode'] ) ) :
 ?>
 <section class="contact_form__wrapper section-padding-3">
     <div class="container">
@@ -47,3 +49,4 @@ $options = get_option( 'wp10ms_options' );
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/teer.svg' ); ?>" alt>
     </div>
 </section>
+<?php endif; ?>

@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v1-testimonial-banner']['url']) || !empty($options['v1-testimonial-rep']) ) :
 ?>
 
 <section class="testimonial-wrapper section-padding">
@@ -35,3 +37,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

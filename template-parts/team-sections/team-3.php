@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-team-p']) || !empty($options['v3-team-h1']) || !empty($options['v3-team-box-rep']) ) :
 ?>
 
 <section class="our-team-wrapper section-bg-2 section-padding bg-contain" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/cta5.png' ); ?>')">
@@ -55,3 +57,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

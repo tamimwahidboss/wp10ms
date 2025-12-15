@@ -1,5 +1,7 @@
 <?php
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v6-cta-sec-h1']) || !empty($repeater_ctas) ) :
 ?>
 <section class="cta-banner style-3">
     <div class="container-fluid bg-cover section-bg" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/cta_bg1.png' ); ?>')">
@@ -27,3 +29,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

@@ -1,6 +1,6 @@
 <?php
 CSF::createSection( $prefix, array(
-    'parent' => 'about-page',
+    'parent' => 'home-page',
     'title'  => 'Team Section',
     'fields' => array(
         array(

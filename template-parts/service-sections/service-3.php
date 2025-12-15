@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-service-span']) || !empty($options['v3-service-p']) || !empty($options['v3-service-h1']) ) :
 ?>
 
 <section class="services-wrapper service-3 section-padding pt-0">
@@ -53,3 +55,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

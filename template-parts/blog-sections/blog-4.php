@@ -1,6 +1,9 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v4-blog-p']) || !empty($options['v4-blog-h1']) || post_type_exists( 'post' )) :
+
 ?>
 
 <!-- index 5 - content-area -->
@@ -69,3 +72,4 @@ $options = get_option( 'wp10ms_options' );
         ?>
     </div>
 </section>
+<?php endif; ?>

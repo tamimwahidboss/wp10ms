@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v3-funfact-p']) || !empty($options['v3-funfact-h1']) || !empty($options['v3-funfact-des']) ) :
 ?>
 
 <section class="fun-fact-wrapper">
@@ -43,3 +45,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

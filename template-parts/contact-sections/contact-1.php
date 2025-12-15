@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v1-contact-sec-h1']) || !empty($options['v1-contact-sec-p']) || !empty($options['v1-contact-rep']) || !empty($options['v1-contact-p']) || !empty($options['v1-contact-h1']) ) :
 ?>
 
 <section class="consultations-wrapper section-padding bg-contain pb-0" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/img/circle-bg-2.png' ); ?>')">
@@ -47,3 +49,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </section>
+<?php endif; ?>

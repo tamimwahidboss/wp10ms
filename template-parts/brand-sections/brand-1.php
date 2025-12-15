@@ -1,6 +1,8 @@
 <?php
 // Retrieve the csf saved option value
 $options = get_option( 'wp10ms_options' );
+
+if(!empty($options['v1-brand-rep']) ) :
 ?>
 
 <div class="client-brand-logo-wrap">
@@ -26,3 +28,4 @@ $options = get_option( 'wp10ms_options' );
         </div>
     </div>
 </div>
+<?php endif; ?>

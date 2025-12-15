@@ -1,16 +1,20 @@
 <?php
 // about-page/about-us.php
 $options = get_option( 'wp10ms_options' );
+
+if( !empty( $options['v4-about-banner']['url'] ) || !empty( $options['v4-about-p'] ) || !empty( $options['v4-about-h1'] ) || !empty( $options['v4-about-des'] ) || !empty( $options['v4-about-cta-h2'] ) || !empty( $options['v4-about-cta-p'] ) || !empty( $options['v4-about-cta-link']['url'] ) ) :
 ?>
 
 <section class="about-wrapper section-padding">
     <div class="container">
         <div class="row">
+            <?php if( !empty($options['v4-about-banner']['url'])) : ?>
             <div class="col-xl-6 col-12 text-center text-xl-left">
                 <div class="about-img clip-path">
                     <img src="<?php echo isset( $options['v4-about-banner']['url'] ) ? esc_url( $options['v4-about-banner']['url'] ) : ''; ?>" alt="">
                 </div>
             </div>
+            <?php endif; ?>
             <div class="col-12 text-center text-xl-left col-xl-6 mt-5 mt-xl-0 pl-xl-5">
                 <div class="section-title mb-30">
                     <p><?php echo isset( $options['v4-about-p'] ) ? esc_attr( $options['v4-about-p'] ) : ''; ?></p>
@@ -67,3 +71,4 @@ $options = get_option( 'wp10ms_options' );
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home4/ring.png' ); ?>" alt="">
     </div>
 </section>
+<?php endif; ?>

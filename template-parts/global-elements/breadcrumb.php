@@ -26,9 +26,12 @@ $global_thumb = esc_url( $options['breadcrumb-banner']['url'] );
 $thumb_url = get_the_post_thumbnail_url();
 $final_url = $thumb_url ? $thumb_url : $global_thumb;
 $ind_thumb = 'background-image: url(' . esc_url( $final_url ) . ');';
+// Only for blog page
+$ind_thumb_post = 'background-image: url(' . esc_url( $global_thumb ) . ');';
+$thumb = (is_front_page() && is_home() || is_home()) ? $ind_thumb_post : $ind_thumb;
 
 ?>
-<section class="page-banner-wrap bg-cover" style="<?php echo $ind_thumb ?>">
+<section class="page-banner-wrap bg-cover" style="<?php echo $thumb ?>">
     <div class="banner-text"><?php echo esc_html( get_the_title() ); ?></div>
     <div class="container">
         <div class="row align-items-center">

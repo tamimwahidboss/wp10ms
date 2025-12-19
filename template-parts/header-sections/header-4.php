@@ -76,13 +76,7 @@ if(!empty($options['top-header-info-rep']) || !empty($options['top-header-social
                 <?php endif; ?>
                 <div class="header-menu d-none d-xl-block">
                     <div class="main-menu">
-                        <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location'    => 'menu-1',
-                            )
-                        );
-                        ?>
+                        <?php wp_nav_menu( array( 'theme_location'    => 'menu-1', ) ); ?>
                     </div>
                 </div>
                 <div class="header-right d-flex align-items-center">
@@ -93,7 +87,7 @@ if(!empty($options['top-header-info-rep']) || !empty($options['top-header-social
                                 <span class="fas fa-search"></span>
                             </a>
 
-                            <form class="search-box" action="#" method="get">
+                            <form class="search-box" action="<?php echo home_url('/'); ?>" method="get">
                                 <div class="form-group d-flex align-items-center">
                                     <input type="search" name="s" value="<?php the_search_query(); ?>" class="search-input" id="search" placeholder="<?php esc_attr_e('Search', 'wp10ms'); ?>">
                                     <button type="submit" class="search-submit"><i class="icon-search"></i></button>

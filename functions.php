@@ -38,25 +38,3 @@ require get_template_directory() . '/inc/csf-widgets.php';
 require get_template_directory() . '/inc/csf-metabox.php';
 
 
-
-
-
-
-
-// Start External Plugin Code Here:
-// Add breadcrumb enable metabox
-// function wp10ms_custom_meta_box() {
-// 	add_meta_box( 'wp10ms_enable_breadcrumb_id', 'Enable Breadcrumb', 'wp10ms_enable_breadcrumb_callback', 'page', 'side', 'default' );
-// }
-// add_action( 'add_meta_boxes', 'wp10ms_custom_meta_box' );
-
-// // A callback function for - wp10ms_enable_breadcrumb_id
-// function wp10ms_enable_breadcrumb_callback( $post ) {
-// 	echo '<select id="breadcrumb_control" name="breadcrumb_control">';
-// 	echo '<option>Select</option>';
-// 	echo '<option '. selected( '' ) .'>Enabled</option>';
-// 	echo '<option>Disabled</option>';
-// 	echo '</select>';
-// }
-
-

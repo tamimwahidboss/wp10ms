@@ -2,15 +2,18 @@
 
 $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
 
-if( is_home() || is_archive() ) {
+if( is_home() || is_archive() || is_search() ) {
     ?>
     <div class="blog-posts">
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        // Get global reading settings posts_per_page value
+        $global_ppp = get_option( 'posts_per_page' );
         $args = array(
             'post_type'             => 'post',
-            'posts_per_page'        => 5,
-            'orderby'               => 'comment_count',
+            'posts_per_page'        => $global_ppp,
+            'order'                 => 'DESC',
+            'orderby'               => 'date',
             'paged'                 => $paged,
             'ignore_sticky_posts'   => 1
         );
@@ -110,9 +113,18 @@ if( is_home() || is_archive() ) {
                 </div>
                 <h2><?php echo esc_html( get_the_title() ); ?></h2>
                 <div class="post-meta">
-                    <span><i class="fal fa-eye"></i>232 Views</span>
-                    <span><i class="fal fa-comments"></i><?php echo esc_html( get_comments_number() ); ?> Comments</span>
-                    <span><i class="fal fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>
+                    <?php
+                    $viewCount = !empty( setPostViews(get_the_ID()) ) ? setPostViews(get_the_ID()) : '0';
+                    if( $viewCount ) {
+                        echo '<span><i class="fal fa-eye"></i>' . $viewCount . ' Views</span>';
+                    }
+                    if(!empty(get_comments_number())){
+                        echo '<span><i class="fal fa-comments"></i>' . esc_html( get_comments_number() ) . ' Comments</span>';
+                    } 
+                    
+                    if(!empty(get_the_date())){
+                        echo '<span><i class="fal fa-calendar-alt"></i>' . esc_html( get_the_date() ) . '</span>';
+                    } ?>
                 </div>
                 <?php the_content(); ?>
             </div>
@@ -136,7 +148,7 @@ if( is_home() || is_archive() ) {
                 <?php endif; ?>
             </div>
             <div class="col-lg-4 col-12 text-lg-right">
-                <h4>Social Share</h4>
+                <h4>Social Shares</h4>
                 <div class="social-share">
                     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ); ?>" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-facebook-f"></i>
@@ -154,7 +166,6 @@ if( is_home() || is_archive() ) {
 
         <div class="related-post-wrap">
             <h3>Related Posts</h3>
-
             <div class="row">
                 <?php
                 $categories = wp_get_post_categories( get_the_ID() );
@@ -194,16 +205,17 @@ if( is_home() || is_archive() ) {
 
         <!-- comments section wrap start -->
         <div class="comments-section-wrap pt-40">
+            <!-- <div class="comments-heading">
+                <h3>03 Comments</h3>
+            </div> -->
             <?php
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) :
                 comments_template();
             endif;
             ?>
-            <div class="comments-heading">
-                <h3>03 Comments</h3>
-            </div>
-            <ul class="comments-item-list">
+            
+            <!-- <ul class="comments-item-list">
                 <li class="single-comment-item">
                     <div class="author-img">
                         <img src="assets/img/blog/author_img.jpg" alt="">
@@ -252,10 +264,10 @@ if( is_home() || is_archive() ) {
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ul> -->
         </div>
 
-        <div class="comment-form-wrap mt-40">
+        <!-- <div class="comment-form-wrap mt-40">
             <h3>Post Comment</h3>
 
             <form action="#" class="comment-form">
@@ -273,7 +285,7 @@ if( is_home() || is_archive() ) {
                 </div>
                 <button class="submit-btn" type="submit"><i class="fal fa-comments"></i>Post Comment</button>
             </form>
-        </div>
+        </div> -->
         
     </div>
     <?php

@@ -23,7 +23,8 @@ if(!empty($options['v4-blog-p']) || !empty($options['v4-blog-h1']) || post_type_
             'post_type'             => 'post',
             'posts_per_page'        => 3,
             'post_status'           => 'publish',
-            'orderby'               => 'comment_count',
+            'order'                 => 'DESC',
+            'orderby'               => 'date',
             'ignore_sticky_posts'   => 1
         );
         $the_query = new WP_Query( $args );

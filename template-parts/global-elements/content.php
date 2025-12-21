@@ -89,7 +89,7 @@ if( is_home() || is_archive() || is_search() ) {
         </ul>
     </div>
     <?php
-} elseif( is_singular() && ! is_singular( 'project' ) ) {
+} elseif( is_singular() && ! is_singular( 'project' ) /* && ! is_singular( 'page' ) */  ) {
     ?>
     <div class="blog-post-details border-wrap">
         <div class="single-blog-post post-details">

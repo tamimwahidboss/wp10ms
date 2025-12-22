@@ -53,7 +53,7 @@ if ( ! empty( $options['v4-project-p'] ) || ! empty( $options['v4-project-h1'] )
                     }
                 }
         ?>
-            <a href="<?php the_permalink(); ?>" class="success-item">
+            <a href="<?php the_permalink(); ?>" class="success-item" target="_blank">
                 <div class="thumb bg-cover" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"></div>
                 <div class="content d-flex align-items-center justify-content-between">
                     <div class="text">

@@ -28,11 +28,13 @@ $final_url = $thumb_url ? $thumb_url : $global_thumb;
 $ind_thumb = 'background-image: url(' . esc_url( $final_url ) . ');';
 // Only for blog page
 $ind_thumb_post = 'background-image: url(' . esc_url( $global_thumb ) . ');';
-$thumb = (is_front_page() && is_home() || is_home()) ? $ind_thumb_post : $ind_thumb;
+$thumb = (is_front_page() && is_home() || is_home() || is_singular('project') || is_singular('post') ) ? $ind_thumb_post : $ind_thumb;
 
 ?>
 <section class="page-banner-wrap bg-cover" style="<?php echo $thumb ?>">
-    <div class="banner-text"><?php echo esc_html( get_the_title() ); ?></div>
+    <div class="banner-text"><?php
+        echo is_singular('post') ? 'Article' : $title;
+    ?></div>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-12 col-12">

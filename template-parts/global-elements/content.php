@@ -1,6 +1,7 @@
 <?php
 
 $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
+$viewCount = !empty( setPostViews(get_the_ID()) ) ? setPostViews(get_the_ID()) : '0';
 
 if( is_home() || is_archive() || is_search() ) {
     ?>
@@ -27,10 +28,7 @@ if( is_home() || is_archive() || is_search() ) {
                         <div class="post-meta">
                             <?php
                             // Display categories
-                            $categories = get_the_category();
-                            if ( ! empty( $categories ) ) {
-                                echo '<span><i class="fal fa-eye"></i>' . esc_html( $categories[0]->name ) . '</span>';
-                            }
+                            echo '<span><i class="fal fa-eye"></i>' . esc_html( $viewCount ) . '</span>';
                             ?>
                             <span><i class="fal fa-comments"></i><?php echo esc_html( get_comments_number() ); ?> Comments</span>
                             <span><i class="fal fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>
@@ -89,7 +87,15 @@ if( is_home() || is_archive() || is_search() ) {
         </ul>
     </div>
     <?php
-} elseif( is_singular() && ! is_singular( 'project' ) /* && ! is_singular( 'page' ) */  ) {
+} elseif( is_singular('page') ) {
+    // Show the page content
+    $the_content = get_the_content();
+    if ( ! empty( $the_content )) :
+        echo '<section style="padding:100px 0;"><div class="container"><div class="row"><div class="col-12">';
+        echo $the_content;
+        echo '</div></div></div></section>';
+    endif;
+} elseif( is_singular('post')  ) {
     ?>
     <div class="blog-post-details border-wrap">
         <div class="single-blog-post post-details">
@@ -114,7 +120,6 @@ if( is_home() || is_archive() || is_search() ) {
                 <h2><?php echo esc_html( get_the_title() ); ?></h2>
                 <div class="post-meta">
                     <?php
-                    $viewCount = !empty( setPostViews(get_the_ID()) ) ? setPostViews(get_the_ID()) : '0';
                     if( $viewCount ) {
                         echo '<span><i class="fal fa-eye"></i>' . $viewCount . ' Views</span>';
                     }
@@ -203,90 +208,26 @@ if( is_home() || is_archive() || is_search() ) {
             </div>
         </div>
 
+        <?php
+            if( post_password_required() ) {
+                return;
+            }
+
+            $get_comment = get_comments_number();
+        ?>
         <!-- comments section wrap start -->
         <div class="comments-section-wrap pt-40">
-            <!-- <div class="comments-heading">
-                <h3>03 Comments</h3>
-            </div> -->
+            <div class="comments-heading">
+                <h3><?php echo $get_comment ?> Comments</h3>
+            </div>
             <?php
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) :
                 comments_template();
             endif;
             ?>
-            
-            <!-- <ul class="comments-item-list">
-                <li class="single-comment-item">
-                    <div class="author-img">
-                        <img src="assets/img/blog/author_img.jpg" alt="">
-                    </div>
-                    <div class="author-info-comment">
-                        <div class="info">
-                            <h5><a href="#">Rosalina Kelian</a></h5>
-                            <span>19th May 2018</span>
-                            <a href="#" class="theme-btn minimal-btn"><i class="fal fa-reply"></i>Reply</a>
-                        </div>
-                        <div class="comment-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud  laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="single-comment-item">
-                    <div class="author-img">
-                        <img src="assets/img/blog/author2.jpg" alt="">
-                    </div>
-                    <div class="author-info-comment">
-                        <div class="info">
-                            <h5><a href="#">Arista Williamson</a></h5>
-                            <span>21th Feb 2020</span>
-                            <a href="#" class="theme-btn minimal-btn"><i class="fal fa-reply"></i>Reply</a>
-                        </div>
-                        <div class="comment-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                    </div>
-
-                    <ul class="replay-comment">
-                        <li class="single-comment-item">
-                            <div class="author-img">
-                                <img src="assets/img/blog/author3.jpg" alt="">
-                            </div>
-                            <div class="author-info-comment">
-                                <div class="info">
-                                    <h5><a href="#">Salman Ahmed</a></h5>
-                                    <span>29th Jan 2021</span>
-                                    <a href="#" class="theme-btn minimal-btn"><i class="fal fa-reply"></i>Reply</a>
-                                </div>
-                                <div class="comment-text">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam..</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul> -->
         </div>
 
-        <!-- <div class="comment-form-wrap mt-40">
-            <h3>Post Comment</h3>
-
-            <form action="#" class="comment-form">
-                <div class="single-form-input">
-                    <textarea placeholder="Type your comments...."></textarea>
-                </div>
-                <div class="single-form-input">
-                    <input type="text" placeholder="Type your name....">
-                </div>
-                <div class="single-form-input">
-                    <input type="email" placeholder="Type your email....">
-                </div>
-                <div class="single-form-input">
-                    <input type="text" placeholder="Type your website....">
-                </div>
-                <button class="submit-btn" type="submit"><i class="fal fa-comments"></i>Post Comment</button>
-            </form>
-        </div> -->
-        
     </div>
     <?php
 } elseif( is_singular( 'project' ) ) {
@@ -312,12 +253,12 @@ if( is_home() || is_archive() || is_search() ) {
             <div class="row">
                 <div class="col-lg-8 col-12">
                     <div class="case-details-content mr-0 mr-lg-5">
-                        <?php esc_html( the_content() ); ?>
+                        <?php the_content(); ?>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
                     <div class="case-info-card">
-                        <div class="case-head bg-cover" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
+                        <div class="case-head bg-cover" style="background-image: url('<?php echo get_template_directory_uri() . '/assets/img/case/case-head.png' ?>')">
                             <h3>Project Details</h3>
                         </div>
                         <div class="project-data">

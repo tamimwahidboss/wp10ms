@@ -14,14 +14,14 @@ if ( ! empty( $options['v4-project-p'] ) || ! empty( $options['v4-project-h1'] )
                 <div class="section-title text-center">
                     <?php if( !empty( $options['v4-project-p'] ) ) : ?>
                     <a class="theme-btn-sm mb-15" data-aos="fade-up">
-                        <?php echo isset($options['v4-project-p']) ? esc_html($options['v4-project-p']) : ''; ?>
+                        <?php echo isset($options['v4-project-p']) ? wp_kses_post($options['v4-project-p']) : ''; ?>
                     </a>
                     <?php
                         endif;
                         if ( !empty( $options['v4-project-h1'] ) ) :
                     ?>
                     <h1 data-aos="fade-up" data-aos-delay="100">
-                        <?php echo isset($options['v4-project-h1']) ? esc_html($options['v4-project-h1']) : ''; ?>
+                        <?php echo isset($options['v4-project-h1']) ? wp_kses_post($options['v4-project-h1']) : ''; ?>
                     </h1>
                     <?php endif; ?>
                 </div>

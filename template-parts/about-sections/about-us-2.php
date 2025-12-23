@@ -11,14 +11,14 @@ if( !empty( $options['v2-about-sec-title-p'] ) || !empty( $options['v2-about-sec
             <div class="col-xl-6 col-lg-6 col-12 pr-xl-5">
                 <div class="section-title mb-30">
                     <?php if ( !empty( $options['v2-about-sec-title-p'] ) ) : ?>
-                        <p><?php echo isset( $options['v2-about-sec-title-p'] ) ? esc_attr( $options['v2-about-sec-title-p'] ) : ''; ?></p>
+                        <p><?php echo isset( $options['v2-about-sec-title-p'] ) ? wp_kses_post( $options['v2-about-sec-title-p'] ) : ''; ?></p>
                     <?php endif; ?>
                     <?php if ( !empty( $options['v2-about-sec-title-h1'] ) ) : ?>
                         <h1><?php echo isset( $options['v2-about-sec-title-h1'] ) ? $options['v2-about-sec-title-h1'] : ''; ?></h1>
                     <?php endif; ?>
                 </div>
                 <?php if( !empty( $options['v2-about-sec-des']) ) : ?>
-                    <p class="pr-md-5"><?php echo isset( $options['v2-about-sec-des'] ) ? esc_html( $options['v2-about-sec-des'] ) : ''; ?></p>
+                    <p class="pr-md-5"><?php echo isset( $options['v2-about-sec-des'] ) ? wp_kses_post( $options['v2-about-sec-des'] ) : ''; ?></p>
                 <?php endif; ?>
                 <div class="about-check-list d-flex">
                     <div class="banner bg-cover" style="background-image: url('<?php echo isset( $options['v2-about-list-banner']['url'] ) ? esc_url( $options['v2-about-list-banner']['url'] ) : ''; ?>')"></div>
@@ -29,7 +29,7 @@ if( !empty( $options['v2-about-sec-title-p'] ) || !empty( $options['v2-about-sec
                             $repeater_items = $options['v2-about-list-rep'];
                             foreach( $repeater_items as $repeater_item ) {
                                 ?>
-                                <li><?php echo isset( $repeater_item['v2-about-list'] ) ? esc_html( $repeater_item['v2-about-list'] ) : ''; ?></li>
+                                <li><?php echo isset( $repeater_item['v2-about-list'] ) ? wp_kses_post( $repeater_item['v2-about-list'] ) : ''; ?></li>
                                 <?php
                             }
                         }

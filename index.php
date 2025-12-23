@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Get post meta safely
 $post_id = get_the_ID();
 
-$breadcrumb_enabled = get_post_meta( $post_id, '_breadcrumb_control', true );
+$breadcrumb_enabled	 = get_post_meta( $post_id, '_breadcrumb_control', true );
 $sections            = get_post_meta( $post_id, '_page_sections', true );
 $meta                = get_post_meta( $post_id, 'wp10ms_metabox', true );
 

@@ -11,21 +11,21 @@ if(!empty($options['v10-service-p']) || !empty($options['v10-service-h1']) || !e
         <div class="row align-items-center">
             <div class="col-lg-6 col-xl-5">
                 <div class="section-title">
-                    <p><?php echo isset( $options['v10-service-p'] ) ? esc_attr( $options['v10-service-p'] ) : ''; ?></p>
-                    <h1><?php echo isset( $options['v10-service-h1'] ) ? esc_html( $options['v10-service-h1'] ) : ''; ?></h1>
+                    <p><?php echo isset( $options['v10-service-p'] ) ? wp_kses_post( $options['v10-service-p'] ) : ''; ?></p>
+                    <h1><?php echo isset( $options['v10-service-h1'] ) ? wp_kses_post( $options['v10-service-h1'] ) : ''; ?></h1>
                 </div>
-                <p class="mt-20"><?php echo isset( $options['v10-service-des'] ) ? esc_html( $options['v10-service-des'] ) : ''; ?></p>
+                <p class="mt-20"><?php echo isset( $options['v10-service-des'] ) ? wp_kses_post( $options['v10-service-des'] ) : ''; ?></p>
                 <?php
                 if ( isset( $options['v10-service-box-rep'] ) && ! empty( $options['v10-service-box-rep'] ) ) {
                     foreach ( $options['v10-service-box-rep'] as $repeater_box ) {
                         ?>
                         <div class="single-skill-bar">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h4><?php echo isset( $repeater_box['v10-service-box-h4'] ) ? esc_html( $repeater_box['v10-service-box-h4'] ) : ''; ?></h4>
-                                <span><?php echo isset( $repeater_box['v10-service-box-span'] ) ? esc_html( $repeater_box['v10-service-box-span'] ) : ''; ?>%</span>
+                                <h4><?php echo isset( $repeater_box['v10-service-box-h4'] ) ? wp_kses_post( $repeater_box['v10-service-box-h4'] ) : ''; ?></h4>
+                                <span><?php echo isset( $repeater_box['v10-service-box-span'] ) ? wp_kses_post( $repeater_box['v10-service-box-span'] ) : ''; ?>%</span>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar" style="width: <?php echo isset( $repeater_box['v10-service-box-span'] ) ? esc_attr( $repeater_box['v10-service-box-span'] ) : '0'; ?>%"></div>
+                                <div class="progress-bar" style="width: <?php echo isset( $repeater_box['v10-service-box-span'] ) ? wp_kses_post( $repeater_box['v10-service-box-span'] ) : '0'; ?>%"></div>
                             </div>
                         </div>
                         <?php

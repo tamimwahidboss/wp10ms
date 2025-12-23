@@ -9,8 +9,8 @@ if(!empty($options['v3-project-p']) || !empty($options['v3-project-h1']) || post
         <div class="row text-center">
             <div class="col-lg-8 offset-lg-2 col-12 text-center">
                 <div class="section-title mb-30">
-                    <p><?php echo isset($options['v3-project-p']) ? esc_attr($options['v3-project-p']) : ''; ?></p>
-                    <h1><?php echo isset($options['v3-project-h1']) ? esc_html($options['v3-project-h1']) : ''; ?></h1>
+                    <p><?php echo isset($options['v3-project-p']) ? wp_kses_post($options['v3-project-p']) : ''; ?></p>
+                    <h1><?php echo isset($options['v3-project-h1']) ? wp_kses_post($options['v3-project-h1']) : ''; ?></h1>
                 </div>
             </div>
         </div>

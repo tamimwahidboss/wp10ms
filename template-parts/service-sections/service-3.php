@@ -11,13 +11,13 @@ if(!empty($options['v3-service-span']) || !empty($options['v3-service-p']) || !e
             <div class="col-12 col-lg-12 text-center">
                 <div class="section-title style-3 mb-40">
                     <span>
-                        <?php echo isset( $options['v3-service-span'] ) ? esc_html( $options['v3-service-span'] ) : ''; ?>
+                        <?php echo isset( $options['v3-service-span'] ) ? wp_kses_post( $options['v3-service-span'] ) : ''; ?>
                     </span>
                     <p>
-                        <?php echo isset( $options['v3-service-p'] ) ? esc_attr( $options['v3-service-p'] ) : ''; ?>
+                        <?php echo isset( $options['v3-service-p'] ) ? wp_kses_post( $options['v3-service-p'] ) : ''; ?>
                     </p>
                     <h1>
-                        <?php echo isset( $options['v3-service-h1'] ) ? esc_html( $options['v3-service-h1'] ) : ''; ?>
+                        <?php echo isset( $options['v3-service-h1'] ) ? wp_kses_post( $options['v3-service-h1'] ) : ''; ?>
                     </h1>
                 </div>
             </div>
@@ -35,15 +35,15 @@ if(!empty($options['v3-service-span']) || !empty($options['v3-service-p']) || !e
                             <div class="service-thumb bg-cover" style="background-image: url('<?php echo isset( $repeater_box['v3-service-box-img']['url'] ) ? esc_url( $repeater_box['v3-service-box-img']['url'] ) : ''; ?>')"></div>
                             <div class="content">
                                 <div class="icon">
-                                    <i class="<?php echo isset( $repeater_box['v3-service-box-icon'] ) ? esc_attr( $repeater_box['v3-service-box-icon'] ) : ''; ?>"></i>
+                                    <i class="<?php echo isset( $repeater_box['v3-service-box-icon'] ) ? wp_kses_post( $repeater_box['v3-service-box-icon'] ) : ''; ?>"></i>
                                 </div>
                                 <h3>
                                     <a href="<?php echo isset( $repeater_box['v3-service-box-link']['url'] ) ? esc_url( $repeater_box['v3-service-box-link']['url'] ) : '#'; ?>">
-                                        <?php echo isset( $repeater_box['v3-service-box-link']['text'] ) ? esc_html( $repeater_box['v3-service-box-link']['text'] ) : ''; ?>
+                                        <?php echo isset( $repeater_box['v3-service-box-link']['text'] ) ? wp_kses_post( $repeater_box['v3-service-box-link']['text'] ) : ''; ?>
                                     </a>
                                 </h3>
                                 <p>
-                                    <?php echo isset( $repeater_box['v3-service-box-p'] ) ? esc_attr( $repeater_box['v3-service-box-p'] ) : ''; ?>
+                                    <?php echo isset( $repeater_box['v3-service-box-p'] ) ? wp_kses_post( $repeater_box['v3-service-box-p'] ) : ''; ?>
                                 </p>
                             </div>
                         </div>

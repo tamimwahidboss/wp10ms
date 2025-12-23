@@ -9,9 +9,9 @@ if(!empty($options['v2-project-span']) || !empty($options['v2-project-p']) || !e
         <div class="row mb-70">
             <div class="col-lg-6 col-12">
                 <div class="section-title style-3">
-                    <span><?php echo isset($options['v2-project-span']) ? esc_html($options['v2-project-span']) : ''; ?></span>
-                    <p><?php echo isset($options['v2-project-p']) ? esc_attr($options['v2-project-p']) : ''; ?></p>
-                    <h1><?php echo isset($options['v2-project-h1']) ? esc_html($options['v2-project-h1']) : ''; ?></h1>
+                    <span><?php echo isset($options['v2-project-span']) ? wp_kses_post($options['v2-project-span']) : ''; ?></span>
+                    <p><?php echo isset($options['v2-project-p']) ? wp_kses_post($options['v2-project-p']) : ''; ?></p>
+                    <h1><?php echo isset($options['v2-project-h1']) ? wp_kses_post($options['v2-project-h1']) : ''; ?></h1>
                 </div>
             </div>
             <div class="col-lg-6 mt-4 mt-lg-0 col-12 text-lg-right">
@@ -38,7 +38,7 @@ if(!empty($options['v2-project-span']) || !empty($options['v2-project-p']) || !e
                                 <?php
                                 $categories = get_the_category();
                                 if ( ! empty( $categories ) ) {
-                                    echo esc_html( $categories[0]->name );
+                                    echo wp_kses_post( $categories[0]->name );
                                 }
                                 ?>
                             </span>

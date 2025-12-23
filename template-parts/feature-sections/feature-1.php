@@ -9,8 +9,8 @@ if(!empty($options['v1-feature-title-p']) || !empty($options['v1-feature-title-h
         <div class="row">
             <div class="col-12 col-lg-12">
                 <div class="section-title text-center">
-                    <p><?php echo isset($options['v1-feature-title-p']) ? esc_attr($options['v1-feature-title-p']) : ''; ?></p>
-                    <h1><?php echo isset($options['v1-feature-title-h1']) ? esc_html($options['v1-feature-title-h1']) : ''; ?></h1>
+                    <p><?php echo isset($options['v1-feature-title-p']) ? wp_kses_post($options['v1-feature-title-p']) : ''; ?></p>
+                    <h1><?php echo isset($options['v1-feature-title-h1']) ? wp_kses_post($options['v1-feature-title-h1']) : ''; ?></h1>
                 </div>
             </div>
         </div>
@@ -25,9 +25,9 @@ if(!empty($options['v1-feature-title-p']) || !empty($options['v1-feature-title-h
                     <?php
                     $repeater_boxes = isset($options['v1-feature-box-rep']) ? $options['v1-feature-box-rep'] : array();
                     foreach( $repeater_boxes as $repeater_box ) {
-                        $feature_icon = isset($repeater_box['v1-feature-box-icon']) ? esc_attr($repeater_box['v1-feature-box-icon']) : '';
-                        $feature_h3 = isset($repeater_box['v1-feature-box-h3']) ? esc_html($repeater_box['v1-feature-box-h3']) : '';
-                        $feature_p = isset($repeater_box['v1-feature-box-p']) ? esc_html($repeater_box['v1-feature-box-p']) : '';
+                        $feature_icon = isset($repeater_box['v1-feature-box-icon']) ? wp_kses_post($repeater_box['v1-feature-box-icon']) : '';
+                        $feature_h3 = isset($repeater_box['v1-feature-box-h3']) ? wp_kses_post($repeater_box['v1-feature-box-h3']) : '';
+                        $feature_p = isset($repeater_box['v1-feature-box-p']) ? wp_kses_post($repeater_box['v1-feature-box-p']) : '';
                         ?>
                         <div class="col-md-6 col-12">
                             <div class="single-features-item">
@@ -46,7 +46,7 @@ if(!empty($options['v1-feature-title-p']) || !empty($options['v1-feature-title-h
                     
                     <div class="col-12">
                         <div class="feature-cta bg-cover bg-center text-white" style="background-image: url('<?php echo isset($options['v1-feature-cta-bg']['url']) ? esc_url($options['v1-feature-cta-bg']['url']) : 'assets/img/home1/wave.png'; ?>')">
-                            <p><?php echo isset($options['v1-feature-cta-p']) ? esc_attr($options['v1-feature-cta-p']) : ''; ?></p>
+                            <p><?php echo isset($options['v1-feature-cta-p']) ? wp_kses_post($options['v1-feature-cta-p']) : ''; ?></p>
                         </div>
                     </div>
                 </div>

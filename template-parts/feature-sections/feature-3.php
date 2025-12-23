@@ -10,12 +10,12 @@ if ( ! empty( $options['v3-feature-a'] ) || ! empty( $options['v3-feature-h1'] )
             <div class="col-12 text-center">
                 <div class="section-title">
                     <?php if( ! empty( $options['v3-feature-a'] ) )  : ?>
-                    <a class="theme-btn-sm mb-15" data-aos="fade-up"><?php echo isset($options['v3-feature-a']) ? esc_html($options['v3-feature-a']) : 'Default Button Text'; ?></a>
+                    <a class="theme-btn-sm mb-15" data-aos="fade-up"><?php echo isset($options['v3-feature-a']) ? wp_kses_post($options['v3-feature-a']) : 'Default Button Text'; ?></a>
                     <?php
                         endif;
                         if( ! empty( $options['v3-feature-h1'] ) ) :
                     ?>
-                    <h1 data-aos="fade-up" data-aos-delay="100"><?php echo isset($options['v3-feature-h1']) ? esc_html($options['v3-feature-h1']) : 'Default Heading'; ?></h1>
+                    <h1 data-aos="fade-up" data-aos-delay="100"><?php echo isset($options['v3-feature-h1']) ? wp_kses_post($options['v3-feature-h1']) : 'Default Heading'; ?></h1>
                     <?php endif; ?>
                 </div>
             </div>
@@ -28,10 +28,10 @@ if ( ! empty( $options['v3-feature-a'] ) || ! empty( $options['v3-feature-h1'] )
             if ( ! empty( $repeater_boxes ) ) :
                 foreach( $repeater_boxes as $repeater_box ) {
                     $box_link_url = isset($repeater_box['v3-feature-box-link']['url']) ? esc_url($repeater_box['v3-feature-box-link']['url']) : '#';
-                    $box_h3 = isset($repeater_box['v3-feature-box-h3']) ? esc_html($repeater_box['v3-feature-box-h3']) : 'Default Heading';
-                    $box_p = isset($repeater_box['v3-feature-box-p']) ? esc_html($repeater_box['v3-feature-box-p']) : 'Default description text.';
-                    $box_link_text = isset($repeater_box['v3-feature-box-link']['text']) ? esc_html($repeater_box['v3-feature-box-link']['text']) : 'Read More';
-                    $box_btn_icon = isset($repeater_box['v3-feature-btn-icon']) ? esc_attr($repeater_box['v3-feature-btn-icon']) : 'default-icon-class';
+                    $box_h3 = isset($repeater_box['v3-feature-box-h3']) ? wp_kses_post($repeater_box['v3-feature-box-h3']) : 'Default Heading';
+                    $box_p = isset($repeater_box['v3-feature-box-p']) ? wp_kses_post($repeater_box['v3-feature-box-p']) : 'Default description text.';
+                    $box_link_text = isset($repeater_box['v3-feature-box-link']['text']) ? wp_kses_post($repeater_box['v3-feature-box-link']['text']) : 'Read More';
+                    $box_btn_icon = isset($repeater_box['v3-feature-btn-icon']) ? wp_kses_post($repeater_box['v3-feature-btn-icon']) : 'default-icon-class';
                     ?>
                     <div class="col-12 col-md-6 col-xl-3" data-aos="fade-up">
                         <a href="<?php echo $box_link_url; ?>" class="single-provide-solutions" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/img/techex-landing-page/we-provide-solutopns-bg.png'); ?>')">

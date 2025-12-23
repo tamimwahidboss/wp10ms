@@ -11,13 +11,13 @@ if(!empty($options['v3-funfact-p']) || !empty($options['v3-funfact-h1']) || !emp
             <div class="row align-items-center">
                 <div class="col-xl-5 pl-xl-0 offset-xl-1 text-white">
                     <div class="section-title mb-30">
-                        <p><?php echo isset( $options['v3-funfact-p'] ) ? esc_html( $options['v3-funfact-p'] ) : ''; ?></p>
-                        <h1><?php echo isset( $options['v3-funfact-h1'] ) ? esc_html( $options['v3-funfact-h1'] ) : ''; ?></h1>
+                        <p><?php echo isset( $options['v3-funfact-p'] ) ? wp_kses_post( $options['v3-funfact-p'] ) : ''; ?></p>
+                        <h1><?php echo isset( $options['v3-funfact-h1'] ) ? wp_kses_post( $options['v3-funfact-h1'] ) : ''; ?></h1>
                     </div>
-                    <p><?php echo isset( $options['v3-funfact-des'] ) ? esc_attr( $options['v3-funfact-des'] ) : ''; ?></p>
+                    <p><?php echo isset( $options['v3-funfact-des'] ) ? wp_kses_post( $options['v3-funfact-des'] ) : ''; ?></p>
                     <a href="<?php echo isset( $options['v3-funfact-btn']['url'] ) ? esc_url( $options['v3-funfact-btn']['url'] ) : '#'; ?>" class="theme-btn mt-4 minimal-btn">
-                        <?php echo isset( $options['v3-funfact-btn']['text'] ) ? esc_html( $options['v3-funfact-btn']['text'] ) : 'Learn More'; ?> 
-                        <i class="<?php echo isset( $options['v3-funfact-btn-icon'] ) ? esc_attr( $options['v3-funfact-btn-icon'] ) : ''; ?>"></i>
+                        <?php echo isset( $options['v3-funfact-btn']['text'] ) ? wp_kses_post( $options['v3-funfact-btn']['text'] ) : 'Learn More'; ?> 
+                        <i class="<?php echo isset( $options['v3-funfact-btn-icon'] ) ? wp_kses_post( $options['v3-funfact-btn-icon'] ) : ''; ?>"></i>
                     </a>
                 </div>
                 <div class="col-xl-5 mt-5 mt-xl-0">
@@ -28,10 +28,10 @@ if(!empty($options['v3-funfact-p']) || !empty($options['v3-funfact-h1']) || !emp
                                 ?>
                                 <div class="single-funfact-item">
                                     <div class="icon">
-                                        <i class="<?php echo isset( $repeater_box['v3-funfact-box-icon'] ) ? esc_attr( $repeater_box['v3-funfact-box-icon'] ) : ''; ?>"></i>
+                                        <i class="<?php echo isset( $repeater_box['v3-funfact-box-icon'] ) ? wp_kses_post( $repeater_box['v3-funfact-box-icon'] ) : ''; ?>"></i>
                                     </div>
-                                    <h3><?php echo isset( $repeater_box['v3-funfact-box-h3'] ) ? esc_html( $repeater_box['v3-funfact-box-h3'] ) : ''; ?></h3>
-                                    <p><?php echo isset( $repeater_box['v3-funfact-box-p'] ) ? esc_attr( $repeater_box['v3-funfact-box-p'] ) : ''; ?></p>
+                                    <h3><?php echo isset( $repeater_box['v3-funfact-box-h3'] ) ? wp_kses_post( $repeater_box['v3-funfact-box-h3'] ) : ''; ?></h3>
+                                    <p><?php echo isset( $repeater_box['v3-funfact-box-p'] ) ? wp_kses_post( $repeater_box['v3-funfact-box-p'] ) : ''; ?></p>
                                 </div>
                                 <?php
                             }

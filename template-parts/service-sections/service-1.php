@@ -11,10 +11,10 @@ if(!empty($options['v1-service-title-p']) || !empty($options['v1-service-title-h
             <div class="col-12 col-lg-12">
                 <div class="section-title text-white text-center">
                     <p>
-                        <?php echo isset( $options['v1-service-title-p'] ) ? esc_attr( $options['v1-service-title-p'] ) : ''; ?>
+                        <?php echo isset( $options['v1-service-title-p'] ) ? wp_kses_post( $options['v1-service-title-p'] ) : ''; ?>
                     </p>
                     <h1>
-                        <?php echo isset( $options['v1-service-title-h1'] ) ? esc_html( $options['v1-service-title-h1'] ) : ''; ?>
+                        <?php echo isset( $options['v1-service-title-h1'] ) ? wp_kses_post( $options['v1-service-title-h1'] ) : ''; ?>
                     </h1>
                 </div>
             </div>
@@ -35,14 +35,14 @@ if(!empty($options['v1-service-title-p']) || !empty($options['v1-service-title-h
                                 <img src="<?php echo isset( $repeater_box['v1-service-box-icon']['url'] ) ? esc_url( $repeater_box['v1-service-box-icon']['url'] ) : ''; ?>" alt="service">
                             </div>
                             <h4>
-                                <?php echo isset( $repeater_box['v1-service-box-title'] ) ? esc_html( $repeater_box['v1-service-box-title'] ) : ''; ?>
+                                <?php echo isset( $repeater_box['v1-service-box-title'] ) ? wp_kses_post( $repeater_box['v1-service-box-title'] ) : ''; ?>
                             </h4>
                             <p>
-                                <?php echo isset( $repeater_box['v1-service-box-p'] ) ? esc_attr( $repeater_box['v1-service-box-p'] ) : ''; ?>
+                                <?php echo isset( $repeater_box['v1-service-box-p'] ) ? wp_kses_post( $repeater_box['v1-service-box-p'] ) : ''; ?>
                             </p>
                             <a href="<?php echo isset( $repeater_box['v1-service-box-btn']['url'] ) ? esc_url( $repeater_box['v1-service-box-btn']['url'] ) : '#'; ?>">
-                                <?php echo isset( $repeater_box['v1-service-box-btn']['text'] ) ? esc_html( $repeater_box['v1-service-box-btn']['text'] ) : ''; ?>
-                                <i class="<?php echo isset( $repeater_box['v1-service-box-btn-icon'] ) ? esc_attr( $repeater_box['v1-service-box-btn-icon'] ) : ''; ?>"></i>
+                                <?php echo isset( $repeater_box['v1-service-box-btn']['text'] ) ? wp_kses_post( $repeater_box['v1-service-box-btn']['text'] ) : ''; ?>
+                                <i class="<?php echo isset( $repeater_box['v1-service-box-btn-icon'] ) ? wp_kses_post( $repeater_box['v1-service-box-btn-icon'] ) : ''; ?>"></i>
                             </a>
                         </div>
                     </div>

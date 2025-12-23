@@ -11,15 +11,15 @@ if(!empty($options['v4-hero-span']) || !empty($options['v4-hero-h1']) || !empty(
                 <div class="row align-items-center">
                     <div class="col-12 col-lg-6">
                         <div class="hero-contents">
-                            <span><?php echo isset( $options['v4-hero-span'] ) ? esc_html( $options['v4-hero-span'] ) : ''; ?></span>
-                            <h1><?php echo isset( $options['v4-hero-h1'] ) ? esc_html( $options['v4-hero-h1'] ) : ''; ?></h1>
-                            <p><?php echo isset( $options['v4-hero-p'] ) ? esc_attr( $options['v4-hero-p'] ) : ''; ?></p>
+                            <span><?php echo isset( $options['v4-hero-span'] ) ? wp_kses_post( $options['v4-hero-span'] ) : ''; ?></span>
+                            <h1><?php echo isset( $options['v4-hero-h1'] ) ? wp_kses_post( $options['v4-hero-h1'] ) : ''; ?></h1>
+                            <p><?php echo isset( $options['v4-hero-p'] ) ? wp_kses_post( $options['v4-hero-p'] ) : ''; ?></p>
                             <?php
                             if ( isset( $options['v4-hero-btn-rep'] ) && is_array( $options['v4-hero-btn-rep'] ) ) {
                                 foreach( $options['v4-hero-btn-rep'] as $repeater_box ) {
                                     $btn_url = isset( $repeater_box['v4-hero-btn']['url'] ) ? esc_url( $repeater_box['v4-hero-btn']['url'] ) : '#';
-                                    $btn_text = isset( $repeater_box['v4-hero-btn']['text'] ) ? esc_html( $repeater_box['v4-hero-btn']['text'] ) : '';
-                                    $btn_icon = isset( $repeater_box['v4-hero-btn-icon'] ) ? esc_attr( $repeater_box['v4-hero-btn-icon'] ) : '';
+                                    $btn_text = isset( $repeater_box['v4-hero-btn']['text'] ) ? wp_kses_post( $repeater_box['v4-hero-btn']['text'] ) : '';
+                                    $btn_icon = isset( $repeater_box['v4-hero-btn-icon'] ) ? wp_kses_post( $repeater_box['v4-hero-btn-icon'] ) : '';
                                     ?>
                                     <a href="<?php echo $btn_url; ?>" class="theme-btn"><?php echo $btn_text; ?> <i class="<?php echo $btn_icon; ?>"></i></a>
                                     <?php

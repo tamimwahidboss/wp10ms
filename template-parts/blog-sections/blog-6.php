@@ -25,23 +25,23 @@ $current_user = wp_get_current_user();
                             <div class="single-blog-post">
                                 <div class="post-featured-thumb bg-cover" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"></div>
                                 <div class="post-content">
-                                    <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a></h2>
+                                    <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h2>
                                     <div class="post-meta">
                                         <?php
                                         // Display categories
                                         $categories = get_the_category();
                                         if ( ! empty( $categories ) ) {
-                                            echo '<span><i class="fal fa-eye"></i>' . esc_html( $categories[0]->name ) . '</span>';
+                                            echo '<span><i class="fal fa-eye"></i>' . wp_kses_post( $categories[0]->name ) . '</span>';
                                         }
                                         ?>
-                                        <span><i class="fal fa-comments"></i><?php echo esc_html( get_comments_number() ); ?> Comments</span>
-                                        <span><i class="fal fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>
+                                        <span><i class="fal fa-comments"></i><?php echo wp_kses_post( get_comments_number() ); ?> Comments</span>
+                                        <span><i class="fal fa-calendar-alt"></i><?php echo wp_kses_post( get_the_date() ); ?></span>
                                     </div>
                                     <p><?php echo get_the_excerpt(); ?></p>
                                     <div class="d-flex justify-content-between align-items-center mt-30">
                                         <div class="author-info">
                                             <div class="author-img" style="background-image: url('<?php echo esc_url( get_avatar_url( get_the_author_meta('ID') ) ); ?>')"></div>
-                                            <h5><a href="<?php echo esc_url( get_the_author_link() ); ?>">by <?php echo esc_html( get_the_author() ); ?></a></h5>
+                                            <h5><a href="<?php echo esc_url( get_the_author_link() ); ?>">by <?php echo wp_kses_post( get_the_author() ); ?></a></h5>
                                         </div>
                                         <div class="post-link">
                                             <a href="<?php echo esc_url( get_the_permalink() ); ?>"><i class="fal fa-arrow-right"></i> Read More</a>

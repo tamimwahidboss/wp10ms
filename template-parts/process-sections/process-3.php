@@ -11,9 +11,9 @@ if(!empty($options['v3-prosess-sec-h6']) || !empty($options['v3-prosess-sec-h2']
                 <div class="section-title section__title_3 mb-30">
                     <h6>
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bage.svg' ); ?>" alt>
-                        <?php echo isset( $options['v3-prosess-sec-h6'] ) ? esc_html( $options['v3-prosess-sec-h6'] ) : ''; ?>
+                        <?php echo isset( $options['v3-prosess-sec-h6'] ) ? wp_kses_post( $options['v3-prosess-sec-h6'] ) : ''; ?>
                     </h6>
-                    <h2><?php echo isset( $options['v3-prosess-sec-h2'] ) ? esc_html( $options['v3-prosess-sec-h2'] ) : ''; ?></h2>
+                    <h2><?php echo isset( $options['v3-prosess-sec-h2'] ) ? wp_kses_post( $options['v3-prosess-sec-h2'] ) : ''; ?></h2>
                 </div>
             </div>
         </div>
@@ -23,14 +23,14 @@ if(!empty($options['v3-prosess-sec-h6']) || !empty($options['v3-prosess-sec-h2']
             $repeater_prosesses = isset( $options['v3-prosess-repeater'] ) && is_array( $options['v3-prosess-repeater'] ) ? $options['v3-prosess-repeater'] : [];
             foreach( $repeater_prosesses as $repeater_prosess ) {
                 ?>
-                <div class="col-12 col-sm-6 col-lg-3 <?php echo isset( $repeater_prosess['v3-single-prosess-mt'] ) ? esc_attr( $repeater_prosess['v3-single-prosess-mt'] ) : ''; ?>">
+                <div class="col-12 col-sm-6 col-lg-3 <?php echo isset( $repeater_prosess['v3-single-prosess-mt'] ) ? wp_kses_post( $repeater_prosess['v3-single-prosess-mt'] ) : ''; ?>">
                     <div class="prosess-element text-center">
                         <div class="icon">
                             <img src="<?php echo isset( $repeater_prosess['v3-single-prosess-icon']['url'] ) ? esc_url( $repeater_prosess['v3-single-prosess-icon']['url'] ) : ''; ?>" alt>
                         </div>
-                        <h4><?php echo isset( $repeater_prosess['v3-single-prosess-h4'] ) ? esc_html( $repeater_prosess['v3-single-prosess-h4'] ) : ''; ?></h4>
-                        <p><?php echo isset( $repeater_prosess['v3-single-prosess-des'] ) ? esc_attr( $repeater_prosess['v3-single-prosess-des'] ) : ''; ?></p>
-                        <span><?php echo isset( $repeater_prosess['v3-single-prosess-step'] ) ? esc_html( $repeater_prosess['v3-single-prosess-step'] ) : ''; ?></span>
+                        <h4><?php echo isset( $repeater_prosess['v3-single-prosess-h4'] ) ? wp_kses_post( $repeater_prosess['v3-single-prosess-h4'] ) : ''; ?></h4>
+                        <p><?php echo isset( $repeater_prosess['v3-single-prosess-des'] ) ? wp_kses_post( $repeater_prosess['v3-single-prosess-des'] ) : ''; ?></p>
+                        <span><?php echo isset( $repeater_prosess['v3-single-prosess-step'] ) ? wp_kses_post( $repeater_prosess['v3-single-prosess-step'] ) : ''; ?></span>
                     </div>
                 </div>
                 <?php

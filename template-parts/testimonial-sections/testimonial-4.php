@@ -12,9 +12,9 @@ if(!empty($options['v4-testimonial-sec-h6']) || !empty($options['v4-testimonial-
                 <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
                     <h6>
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bage.svg' ); ?>" alt>
-                        <?php echo isset( $options['v4-testimonial-sec-h6'] ) ? esc_html( $options['v4-testimonial-sec-h6'] ) : ''; ?>
+                        <?php echo isset( $options['v4-testimonial-sec-h6'] ) ? wp_kses_post( $options['v4-testimonial-sec-h6'] ) : ''; ?>
                     </h6>
-                    <h2><?php echo isset( $options['v4-testimonial-sec-h2'] ) ? esc_html( $options['v4-testimonial-sec-h2'] ) : ''; ?></h2>
+                    <h2><?php echo isset( $options['v4-testimonial-sec-h2'] ) ? wp_kses_post( $options['v4-testimonial-sec-h2'] ) : ''; ?></h2>
                 </div>
             </div>
             <div class="col-12">
@@ -27,11 +27,11 @@ if(!empty($options['v4-testimonial-sec-h6']) || !empty($options['v4-testimonial-
                                 <div class="agent-content d-flex align-items-center">
                                     <div class="agent-img bg-center bg-cover" style="background-image: url('<?php echo esc_url( $repeater_agent['v4-testimonial-img']['url'] ); ?>');"></div>
                                     <div class="agent-content_name">
-                                        <h4><?php echo isset( $repeater_agent['v4-testimonial-h4'] ) ? esc_html( $repeater_agent['v4-testimonial-h4'] ) : ''; ?></h4>
-                                        <p><?php echo isset( $repeater_agent['v4-testimonial-prof'] ) ? esc_attr( $repeater_agent['v4-testimonial-prof'] ) : ''; ?></p>
+                                        <h4><?php echo isset( $repeater_agent['v4-testimonial-h4'] ) ? wp_kses_post( $repeater_agent['v4-testimonial-h4'] ) : ''; ?></h4>
+                                        <p><?php echo isset( $repeater_agent['v4-testimonial-prof'] ) ? wp_kses_post( $repeater_agent['v4-testimonial-prof'] ) : ''; ?></p>
                                     </div>
                                 </div>
-                                <p><?php echo isset( $repeater_agent['v4-testimonial-feed'] ) ? esc_html( $repeater_agent['v4-testimonial-feed'] ) : ''; ?></p>
+                                <p><?php echo isset( $repeater_agent['v4-testimonial-feed'] ) ? wp_kses_post( $repeater_agent['v4-testimonial-feed'] ) : ''; ?></p>
                                 <div class="quera">
                                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/quote.svg' ); ?>" alt>
                                 </div>

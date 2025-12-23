@@ -11,18 +11,18 @@ if(!empty($options['v6-project-sec-h6']) || !empty($options['v6-project-sec-h2']
                 <div class="section-title section__title_3 mb-30">
                     <h6>
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bage.svg' ); ?>" alt="">
-                        <?php echo isset($options['v6-project-sec-h6']) ? esc_html($options['v6-project-sec-h6']) : ''; ?>
+                        <?php echo isset($options['v6-project-sec-h6']) ? wp_kses_post($options['v6-project-sec-h6']) : ''; ?>
                     </h6>
                     <h2>
-                        <?php echo isset($options['v6-project-sec-h2']) ? esc_html($options['v6-project-sec-h2']) : ''; ?>
+                        <?php echo isset($options['v6-project-sec-h2']) ? wp_kses_post($options['v6-project-sec-h2']) : ''; ?>
                     </h2>
                 </div>
             </div>
             <div class="col-12 col-lg-4">
                 <div class="project__btn">
                     <a href="<?php echo esc_url($options['v6-project-sec-btn-link']['url']); ?>" class="theme-btn">
-                        <?php echo esc_html($options['v6-project-sec-btn-text']); ?>
-                        <i class="<?php echo esc_attr($options['v6-project-sec-btn-icon']); ?>"></i>
+                        <?php echo wp_kses_post($options['v6-project-sec-btn-text']); ?>
+                        <i class="<?php echo wp_kses_post($options['v6-project-sec-btn-icon']); ?>"></i>
                     </a>
                 </div>
             </div>
@@ -49,8 +49,8 @@ if(!empty($options['v6-project-sec-h6']) || !empty($options['v6-project-sec-h2']
 
                     if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
                         foreach ( $categories as $category ) {
-                            $category_slugs .= ' ' . esc_attr( $category->slug );
-                            $category_names .= esc_html( $category->name ) . ' ';
+                            $category_slugs .= ' ' . wp_kses_post( $category->slug );
+                            $category_names .= wp_kses_post( $category->name ) . ' ';
                         }
                     }
             ?>

@@ -7564,7 +7564,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   clear: both;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  bottom: 0;
+  top: 0;
   left: 0;
   position: absolute;
   content: "\f058";
@@ -7687,7 +7687,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   border-style: inherit;
   border-radius: 0;
   background-repeat: no-repeat;
-  background-image: url(assets/img/techex-landing-page/cta-overly.svg);
+  background-image: url(../img/techex-landing-page/cta-overly.svg);
 }
 .cta-banner.style-3 .container-fluid h1 {
   font-weight: 900;
@@ -8937,6 +8937,9 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
           align-items: center;
   margin-bottom: 30px;
 }
+.prosess-wrapper .prosess-element .icon img {
+  max-width: 50%;
+}
 .prosess-wrapper .prosess-element h4 {
   font-family: "Circular Std", sans-serif;
   font-style: normal;
@@ -9142,7 +9145,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
 .accordion .card-header a {
   display: block;
   font-weight: 600;
-  line-height: 50px;
+  line-height: 30px;
   padding: 10px 0px;
   position: relative;
   color: #000;
@@ -9176,6 +9179,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   padding-left: 28px;
   padding-top: 10px;
   padding-bottom: 30px;
+  line-height: 24px;
 }
 
 .single-faq-card {
@@ -10014,6 +10018,23 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   transition: all 0.3s ease-in-out;
   margin: 0 2px;
 }
+.page-nav-wrap ul li span.page-numbers.current, span.page-numbers.dots {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+  margin: 0 2px;
+}
+.page-nav-wrap ul li span.page-numbers.current {
+  color: #fff;
+  background: #086ad7;
+}
+span.page-numbers.dots {
+  background: #f6f6f6;
+}
 @media (max-width: 767px) {
   .causes-page-nav ul li a, .page-nav-wrap ul li a {
     margin-top: 10px;
@@ -10746,7 +10767,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   height: 519px;
   position: absolute;
   background: no-repeat;
-  background-image: url("assets/img/techex-landing-page/blog_bg1.png");
+  background-image: url("../img/techex-landing-page/blog_bg1.png");
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-name: scale5;
@@ -10849,7 +10870,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   right: -250px;
   height: 187px;
   position: absolute;
-  background-image: url(assets/img/techex-landing-page/our-team-bg-dot.png);
+  background-image: url(../img/techex-landing-page/our-team-bg-dot.png);
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-name: movebounce;
@@ -10867,7 +10888,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   height: 701px;
   position: absolute;
   background: no-repeat;
-  background-image: url("assets/img/techex-landing-page/our-team-bg.png");
+  background-image: url("../img/techex-landing-page/our-team-bg.png");
 }
 @media (max-width: 1199px) {
   .our-team-wrapper.techex-landing-page .theme-btn-sm {
@@ -10941,7 +10962,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   position: absolute;
   background: no-repeat;
   background-size: cover;
-  background-image: url("assets/img/techex-landing-page/blog_bg1.png");
+  background-image: url("../img/techex-landing-page/blog_bg1.png");
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-name: scale5;
@@ -11436,7 +11457,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   right: -350px;
   height: 137px;
   position: absolute;
-  background-image: url(assets/img/techex-landing-page/triangle.png);
+  background-image: url(../img/techex-landing-page/triangle.png);
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-name: movebounce;
@@ -11628,7 +11649,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   right: -250px;
   height: 187px;
   position: absolute;
-  background-image: url(assets/img/techex-landing-page/our-team-bg-dot.png);
+  background-image: url(../img/techex-landing-page/our-team-bg-dot.png);
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-name: movebounce;
@@ -11646,7 +11667,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   width: 123px;
   height: 135px;
   position: absolute;
-  background-image: url(assets/img/techex-landing-page/our-team-bg-dot.png);
+  background-image: url(../img/techex-landing-page/our-team-bg-dot.png);
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
   -webkit-animation-duration: 3s;
@@ -11776,7 +11797,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
 }
 .about-wrapper.techex-landing-page .about-img {
   position: relative;
-  margin: 0 15px 0 -175px;
+  /* margin: 0 15px 0 -175px; */
 }
 @media (max-width: 991px) {
   .about-wrapper.techex-landing-page .about-img {
@@ -11855,6 +11876,14 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
   z-index: 1;
   padding: 202.5px 0;
   position: relative;
+}
+.single-slide.bg-cover {
+    min-height: 700px;
+}
+.hero-slide-wrapper.techex-landing-page .single-slide {
+  padding: 50px 0 !important;
+  display: flex;
+  align-items: center;
 }
 @media (max-width: 1366px) {
   .hero-slide-wrapper.techex-landing-page .single-slide {

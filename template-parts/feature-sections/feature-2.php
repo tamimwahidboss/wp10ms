@@ -13,9 +13,9 @@ if(!empty($repeater_boxes) || !empty($options['v2-feature-top-title']) || !empty
                     <?php
                     $repeater_boxes = isset($options['v2-feature-icon-rep']) ? $options['v2-feature-icon-rep'] : array();
                     foreach( $repeater_boxes as $repeater_box ) {
-                        $icon_class = isset($repeater_box['v2-feature-box-icon']) ? esc_attr($repeater_box['v2-feature-box-icon']) : '';
+                        $icon_class = isset($repeater_box['v2-feature-box-icon']) ? wp_kses_post($repeater_box['v2-feature-box-icon']) : '';
                         $link_url = isset($repeater_box['v2-feature-box-link']['url']) ? esc_url($repeater_box['v2-feature-box-link']['url']) : '#';
-                        $link_text = isset($repeater_box['v2-feature-box-link']['text']) ? esc_html($repeater_box['v2-feature-box-link']['text']) : '';
+                        $link_text = isset($repeater_box['v2-feature-box-link']['text']) ? wp_kses_post($repeater_box['v2-feature-box-link']['text']) : '';
                         ?>
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="icon-box">
@@ -32,13 +32,13 @@ if(!empty($repeater_boxes) || !empty($options['v2-feature-top-title']) || !empty
             </div>
             <div class="col-12 col-xl-5 offset-xl-1 mt-5 mt-xl-0">
                 <div class="section-title">
-                    <p><?php echo isset($options['v2-feature-top-title']) ? esc_html($options['v2-feature-top-title']) : ''; ?></p>
-                    <h1><?php echo isset($options['v2-feature-h1']) ? esc_html($options['v2-feature-h1']) : ''; ?></h1>
+                    <p><?php echo isset($options['v2-feature-top-title']) ? wp_kses_post($options['v2-feature-top-title']) : ''; ?></p>
+                    <h1><?php echo isset($options['v2-feature-h1']) ? wp_kses_post($options['v2-feature-h1']) : ''; ?></h1>
                 </div>
-                <p class="mt-20"><?php echo isset($options['v2-feature-p']) ? esc_html($options['v2-feature-p']) : ''; ?></p>
+                <p class="mt-20"><?php echo isset($options['v2-feature-p']) ? wp_kses_post($options['v2-feature-p']) : ''; ?></p>
                 <a href="<?php echo isset($options['v2-feature-btn']['url']) ? esc_url($options['v2-feature-btn']['url']) : '#'; ?>" class="theme-btn mt-30">
-                    <?php echo isset($options['v2-feature-btn']['text']) ? esc_html($options['v2-feature-btn']['text']) : 'Button Text'; ?> 
-                    <i class="<?php echo isset($options['v2-feature-btn-icon']) ? esc_attr($options['v2-feature-btn-icon']) : ''; ?>"></i>
+                    <?php echo isset($options['v2-feature-btn']['text']) ? wp_kses_post($options['v2-feature-btn']['text']) : 'Button Text'; ?> 
+                    <i class="<?php echo isset($options['v2-feature-btn-icon']) ? wp_kses_post($options['v2-feature-btn-icon']) : ''; ?>"></i>
                 </a>
             </div>
         </div>

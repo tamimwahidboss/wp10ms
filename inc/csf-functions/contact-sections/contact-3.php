@@ -14,20 +14,20 @@ CSF::createSection( $prefix, array(
                 array(
                     'id'      => 'v3-contact-box-i',
                     'type'    => 'icon',
-                    'title'   => 'Info Box Icon',
+                    'title'   => 'Icon',
                     'default' => 'fal fa-envelope',
                 ),
                 array(
                     'id'      => 'v3-contact-box-h4',
                     'type'    => 'text',
                     'title'   => 'Info Title',
-                    'default' => 'Email',
+                    'default' => 'Email Address',
                 ),
                 array(
                     'id'      => 'v3-contact-box-span',
-                    'type'    => 'text',
+                    'type'    => 'textarea',
                     'title'   => 'Info Details',
-                    'default' => 'Email',
+                    'default' => 'Sent mail asap anytime',
                 ),
                 array(
                     'id'          => 'v3-contact-box-info-rep',
@@ -38,7 +38,7 @@ CSF::createSection( $prefix, array(
                     'fields'      => array(
                         array(
                             'id'      => 'v3-contact-box-info',
-                            'type'    => 'text',
+                            'type'    => 'textarea',
                             'title'   => 'Info Value',
                             'default' => 'info@example.com',
                         ),
@@ -50,17 +50,23 @@ CSF::createSection( $prefix, array(
             'id'      => 'v3-contact-map',
             'type'    => 'text',
             'title'   => 'Google Map Link',
-            'default' => esc_url( '#' ),
         ),
         array(
             'id'      => 'v3-contact-form-p',
             'type'    => 'text',
-            'title'   => 'Short Title',
+            'title'   => 'Sub Title',
+            'default'   => 'Send us message',
         ),
         array(
             'id'      => 'v3-contact-form-h1',
             'type'    => 'text',
-            'title'   => 'Form Title',
+            'title'   => 'Title',
+            'default'   => 'Don’t Hesited To Contact Us',
+        ),
+        array(
+            'id'      => 'v3-contact-shortcode',
+            'type'    => 'text',
+            'title'   => 'Form Shortcode',
         ),
     ),
 ) );

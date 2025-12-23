@@ -22,17 +22,17 @@ if(!empty($options['v6-about-sec-media']['url']) || !empty($options['v6-about-se
                 <div class="section-title section__title_3 mb-30">
                     <h6>
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bage.svg' ); ?>" alt="">
-                        <?php echo !empty( $options['v6-about-sec-h6'] ) ? esc_html( $options['v6-about-sec-h6'] ) : ''; ?>
+                        <?php echo !empty( $options['v6-about-sec-h6'] ) ? wp_kses_post( $options['v6-about-sec-h6'] ) : ''; ?>
                     </h6>
-                    <h2><?php echo !empty( $options['v6-about-sec-h2'] ) ? esc_html( $options['v6-about-sec-h2'] ) : ''; ?></h2>
+                    <h2><?php echo !empty( $options['v6-about-sec-h2'] ) ? wp_kses_post( $options['v6-about-sec-h2'] ) : ''; ?></h2>
                 </div>
                 <div class="about-content">
                     <?php echo !empty( $options['v6-about-sec-des'] ) ? wp_kses_post( $options['v6-about-sec-des'] ) : ''; ?>
                     <br>
                     <a href="<?php echo isset( $options['v6-about-sec-btn-link']['url'] ) && !empty( $options['v6-about-sec-btn-link']['url'] ) ? esc_url( $options['v6-about-sec-btn-link']['url'] ) : '#'; ?>" class="theme-btn mt-40">
-                        <?php echo isset( $options['v6-about-sec-btn-text'] ) && !empty( $options['v6-about-sec-btn-text'] ) ? esc_html( $options['v6-about-sec-btn-text'] ) : 'Learn More'; ?>
+                        <?php echo isset( $options['v6-about-sec-btn-text'] ) && !empty( $options['v6-about-sec-btn-text'] ) ? wp_kses_post( $options['v6-about-sec-btn-text'] ) : 'Learn More'; ?>
                         <?php if ( isset( $options['v6-about-sec-btn-icon'] ) && !empty( $options['v6-about-sec-btn-icon'] ) ): ?>
-                            <i class="<?php echo esc_attr( $options['v6-about-sec-btn-icon'] ); ?>"></i>
+                            <i class="<?php echo wp_kses_post( $options['v6-about-sec-btn-icon'] ); ?>"></i>
                         <?php endif; ?>
                     </a>
 

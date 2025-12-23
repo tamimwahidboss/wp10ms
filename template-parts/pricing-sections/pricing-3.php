@@ -12,9 +12,9 @@ if(!empty($options['v3-price-sec-h6']) || !empty($options['v3-price-sec-h2']) ||
                 <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
                     <h6>
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bage.svg' ); ?>" alt>
-                        <?php echo isset( $options['v3-price-sec-h6'] ) ? esc_html( $options['v3-price-sec-h6'] ) : ''; ?>
+                        <?php echo isset( $options['v3-price-sec-h6'] ) ? wp_kses_post( $options['v3-price-sec-h6'] ) : ''; ?>
                     </h6>
-                    <h2><?php echo isset( $options['v3-price-sec-h2'] ) ? esc_html( $options['v3-price-sec-h2'] ) : ''; ?></h2>
+                    <h2><?php echo isset( $options['v3-price-sec-h2'] ) ? wp_kses_post( $options['v3-price-sec-h2'] ) : ''; ?></h2>
                 </div>
             </div>
         </div>
@@ -27,18 +27,18 @@ if(!empty($options['v3-price-sec-h6']) || !empty($options['v3-price-sec-h2']) ||
                     <div class="price__element">
                         <div class="price__head">
                             <div class="price__range">
-                                <span><?php echo isset( $repeater_price['v3-price-simble'] ) ? esc_html( $repeater_price['v3-price-simble'] ) : ''; ?></span>
-                                <h3><?php echo isset( $repeater_price['v3-price-count'] ) ? esc_html( $repeater_price['v3-price-count'] ) : ''; ?></h3>
-                                <p><?php echo isset( $repeater_price['v3-price-schedule'] ) ? esc_html( $repeater_price['v3-price-schedule'] ) : ''; ?></p>
+                                <span><?php echo isset( $repeater_price['v3-price-simble'] ) ? wp_kses_post( $repeater_price['v3-price-simble'] ) : ''; ?></span>
+                                <h3><?php echo isset( $repeater_price['v3-price-count'] ) ? wp_kses_post( $repeater_price['v3-price-count'] ) : ''; ?></h3>
+                                <p><?php echo isset( $repeater_price['v3-price-schedule'] ) ? wp_kses_post( $repeater_price['v3-price-schedule'] ) : ''; ?></p>
                             </div>
                         </div>
                         <div class="preice__body">
                             <div class="cetagory__element">
-                                <h4><?php echo isset( $repeater_price['v3-price-plan'] ) ? esc_html( $repeater_price['v3-price-plan'] ) : ''; ?></h4>
+                                <h4><?php echo isset( $repeater_price['v3-price-plan'] ) ? wp_kses_post( $repeater_price['v3-price-plan'] ) : ''; ?></h4>
                                 <p>Plan</p>
                             </div>
                             <a href="<?php echo isset( $repeater_price['v3-price-btn-link']['url'] ) ? esc_url( $repeater_price['v3-price-btn-link']['url'] ) : '#' ?>" class="theme-btn mb-30">
-                                <?php echo isset( $repeater_price['v3-price-btn-text'] ) ? esc_html( $repeater_price['v3-price-btn-text'] ) : ''; ?>
+                                <?php echo isset( $repeater_price['v3-price-btn-text'] ) ? wp_kses_post( $repeater_price['v3-price-btn-text'] ) : ''; ?>
                             </a>
                             <ul class="plan-features">
                                 <?php
@@ -46,7 +46,7 @@ if(!empty($options['v3-price-sec-h6']) || !empty($options['v3-price-sec-h2']) ||
                                 foreach( $repeater_price_features as $repeater_price_feature ) {
                                     $classActive = ( isset( $repeater_price_feature['v3-price-ft-active'] ) && $repeater_price_feature['v3-price-ft-active'] == 0 ) ? 'active' : '';
                                     ?>
-                                    <li class="<?php echo esc_attr( $classActive ); ?>"><?php echo isset( $repeater_price_feature['v3-price-ft'] ) ? esc_html( $repeater_price_feature['v3-price-ft'] ) : ''; ?></li>
+                                    <li class="<?php echo wp_kses_post( $classActive ); ?>"><?php echo isset( $repeater_price_feature['v3-price-ft'] ) ? wp_kses_post( $repeater_price_feature['v3-price-ft'] ) : ''; ?></li>
                                     <?php
                                 }
                                 ?>

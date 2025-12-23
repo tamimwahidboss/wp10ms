@@ -283,7 +283,7 @@ function wp10ms_contact_select_func() {
             'options'     => array(
                 'contact-1'  => 'contact v1',
                 'contact-2'  => 'contact v2',
-                // 'contact-3'  => 'contact v3',
+                'contact-3'  => 'contact v3',
             ),
         ),
     );

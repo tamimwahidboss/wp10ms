@@ -26,7 +26,7 @@ $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
             <div class="row">
                 <div class="col-lg-8 col-12">
                     <div class="case-details-content mr-0 mr-lg-5">
-                        <?php esc_html( the_content() ); ?>
+                        <?php wp_kses_post( the_content() ); ?>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
@@ -40,7 +40,7 @@ $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
                                     Clients
                                 </div>
                                 <div class="right-data">
-                                    <?php echo esc_html( $meta['v6-project-data-1'] ); ?>
+                                    <?php echo wp_kses_post( $meta['v6-project-data-1'] ); ?>
                                 </div>
                             </div>
                             <div class="single-info-item">
@@ -48,7 +48,7 @@ $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
                                     Project
                                 </div>
                                 <div class="right-data">
-                                    <?php echo esc_html( $meta['v6-project-data-2'] ); ?>
+                                    <?php echo wp_kses_post( $meta['v6-project-data-2'] ); ?>
                                 </div>
                             </div>
                             <div class="single-info-item">
@@ -56,7 +56,7 @@ $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
                                     Service
                                 </div>
                                 <div class="right-data">
-                                    <?php echo esc_html( $meta['v6-project-data-3'] );?>
+                                    <?php echo wp_kses_post( $meta['v6-project-data-3'] );?>
                                 </div>
                             </div>
                             <div class="single-info-item">
@@ -77,7 +77,7 @@ $meta = get_post_meta( get_the_ID(), 'wp10ms_metabox', true );
                                     Date
                                 </div>
                                 <div class="right-data">
-                                    <?php echo esc_html( $meta['v6-project-data-5'] ); ?>
+                                    <?php echo wp_kses_post( $meta['v6-project-data-5'] ); ?>
                                 </div>
                             </div>
                             <div class="single-info-item">

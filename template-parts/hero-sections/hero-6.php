@@ -12,7 +12,7 @@ if(!empty($options['v6-hero-h2']) || !empty($options['v6-hero-banner']['url']) |
             <div class="col-md-12 col-lg-6">
                 <div class="banner-content">
                     <h2 data-aos="fade-up">
-                        <?php echo isset( $options['v6-hero-h2'] ) ? esc_html( $options['v6-hero-h2'] ) : ''; ?>
+                        <?php echo isset( $options['v6-hero-h2'] ) ? wp_kses_post( $options['v6-hero-h2'] ) : ''; ?>
                     </h2>
                     <a 
                         data-aos="fade-up" 
@@ -20,8 +20,8 @@ if(!empty($options['v6-hero-h2']) || !empty($options['v6-hero-banner']['url']) |
                         href="<?php echo isset( $options['v6-hero-btn-link']['url'] ) ? esc_url( $options['v6-hero-btn-link']['url'] ) : '#' ; ?>" 
                         class="theme-btn mt-40"
                     >
-                        <?php echo isset( $options['v6-hero-btn-text'] ) ? esc_html( $options['v6-hero-btn-text'] ) : ''; ?>
-                        <i class="<?php echo isset( $options['v6-hero-btn-icon'] ) ? esc_attr( $options['v6-hero-btn-icon'] ) : ''; ?>"></i>
+                        <?php echo isset( $options['v6-hero-btn-text'] ) ? wp_kses_post( $options['v6-hero-btn-text'] ) : ''; ?>
+                        <i class="<?php echo isset( $options['v6-hero-btn-icon'] ) ? wp_kses_post( $options['v6-hero-btn-icon'] ) : ''; ?>"></i>
                     </a>
                 </div>
             </div>

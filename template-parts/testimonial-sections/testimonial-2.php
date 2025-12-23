@@ -18,16 +18,16 @@ if(!empty($options['v2-testimonial-rep']) ) :
                             // Set the 'active' class for the first testimonial
                             $classActive = ( $counterTes == 1 ) ? 'active' : '';
                             ?>
-                            <div class="single-testimonial <?php echo esc_attr( $classActive ); ?>">
+                            <div class="single-testimonial <?php echo wp_kses_post( $classActive ); ?>">
                                 <div class="icon">
                                     <i class="flaticon-right-quote"></i>
                                 </div>
-                                <h2><?php echo isset( $repeater_box['v2-testimonial-h2'] ) ? esc_html( $repeater_box['v2-testimonial-h2'] ) : ''; ?></h2>
+                                <h2><?php echo isset( $repeater_box['v2-testimonial-h2'] ) ? wp_kses_post( $repeater_box['v2-testimonial-h2'] ) : ''; ?></h2>
                                 <div class="client-info">
                                     <div class="client-img bg-cover" style="background-image: url('<?php echo isset( $repeater_box['v2-testimonial-img']['url'] ) ? esc_url( $repeater_box['v2-testimonial-img']['url'] ) : ''; ?>')"></div>
                                     <div class="client-bio">
-                                        <h3><?php echo isset( $repeater_box['v2-testimonial-h3'] ) ? esc_html( $repeater_box['v2-testimonial-h3'] ) : ''; ?></h3>
-                                        <p><?php echo isset( $repeater_box['v2-testimonial-p'] ) ? esc_attr( $repeater_box['v2-testimonial-p'] ) : ''; ?></p>
+                                        <h3><?php echo isset( $repeater_box['v2-testimonial-h3'] ) ? wp_kses_post( $repeater_box['v2-testimonial-h3'] ) : ''; ?></h3>
+                                        <p><?php echo isset( $repeater_box['v2-testimonial-p'] ) ? wp_kses_post( $repeater_box['v2-testimonial-p'] ) : ''; ?></p>
                                     </div>
                                 </div>
                             </div>

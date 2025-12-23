@@ -16,7 +16,7 @@ if(!empty($options['v8-work-sec-banner']['url']) || !empty($options['v8-work-sec
                     <div class="video-play-btn">
                         <?php if ( isset( $options['v8-work-sec-vid']['url'] ) && isset( $options['v8-work-sec-vid-icon'] ) ) : ?>
                             <a href="<?php echo esc_url( $options['v8-work-sec-vid']['url'] ); ?>" class="popup-video">
-                                <i class="<?php echo esc_attr( $options['v8-work-sec-vid-icon'] ); ?>"></i>
+                                <i class="<?php echo wp_kses_post( $options['v8-work-sec-vid-icon'] ); ?>"></i>
                             </a>
                         <?php endif; ?>
                     </div>
@@ -26,23 +26,23 @@ if(!empty($options['v8-work-sec-banner']['url']) || !empty($options['v8-work-sec
                 <div class="section-title section__title_3 mb-30">
                     <h6>
                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bage.svg' ); ?>" alt="">
-                        <?php echo isset( $options['v8-work-sec-h6'] ) ? esc_html( $options['v8-work-sec-h6'] ) : ''; ?>
+                        <?php echo isset( $options['v8-work-sec-h6'] ) ? wp_kses_post( $options['v8-work-sec-h6'] ) : ''; ?>
                     </h6>
-                    <h2><?php echo isset( $options['v8-work-sec-h2'] ) ? esc_html( $options['v8-work-sec-h2'] ) : ''; ?></h2>
+                    <h2><?php echo isset( $options['v8-work-sec-h2'] ) ? wp_kses_post( $options['v8-work-sec-h2'] ) : ''; ?></h2>
                 </div>
                 <div class="service-content">
-                    <p><?php echo isset( $options['v8-work-sec-des'] ) ? esc_attr( $options['v8-work-sec-des'] ) : ''; ?></p>
+                    <p><?php echo isset( $options['v8-work-sec-des'] ) ? wp_kses_post( $options['v8-work-sec-des'] ) : ''; ?></p>
                     <?php
                     if ( isset( $options['v8-work-box-repeater'] ) && ! empty( $options['v8-work-box-repeater'] ) ) {
                         foreach ( $options['v8-work-box-repeater'] as $repeater_skill ) {
                             ?>
                             <div class="single-skill-bar">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h4><?php echo isset( $repeater_skill['v8-work-prog-h4'] ) ? esc_html( $repeater_skill['v8-work-prog-h4'] ) : ''; ?></h4>
-                                    <span><?php echo isset( $repeater_skill['v8-work-prog-count'] ) ? esc_html( $repeater_skill['v8-work-prog-count'] ) : ''; ?></span>
+                                    <h4><?php echo isset( $repeater_skill['v8-work-prog-h4'] ) ? wp_kses_post( $repeater_skill['v8-work-prog-h4'] ) : ''; ?></h4>
+                                    <span><?php echo isset( $repeater_skill['v8-work-prog-count'] ) ? wp_kses_post( $repeater_skill['v8-work-prog-count'] ) : ''; ?></span>
                                 </div>
                                 <div class="progress d-flex align-items-center">
-                                    <div class="progress-bar" style="width: <?php echo isset( $repeater_skill['v8-work-prog-count'] ) ? esc_attr( $repeater_skill['v8-work-prog-count'] ) : '0'; ?>;"></div>
+                                    <div class="progress-bar" style="width: <?php echo isset( $repeater_skill['v8-work-prog-count'] ) ? wp_kses_post( $repeater_skill['v8-work-prog-count'] ) : '0'; ?>;"></div>
                                 </div>
                             </div>
                             <?php

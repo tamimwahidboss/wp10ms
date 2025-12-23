@@ -11,7 +11,7 @@ if( !empty( $options['about-sec-title-p'] ) || !empty( $options['about-sec-title
                 <div class="col-lg-6 col-12 pr-5">
                     <div class="section-title mb-30">
                         <?php if( isset( $options['about-sec-title-p'] ) ) : ?>
-                            <p><?php echo esc_attr( $options['about-sec-title-p'] ); ?></p>
+                            <p><?php echo wp_kses_post( $options['about-sec-title-p'] ); ?></p>
                         <?php endif; ?>
 
                         <?php if( isset( $options['about-sec-title-h1'] ) ) : ?>
@@ -20,7 +20,7 @@ if( !empty( $options['about-sec-title-p'] ) || !empty( $options['about-sec-title
                     </div>
 
                     <?php if( isset( $options['about-sec-title-des'] ) ) : ?>
-                        <p class="pr-lg-5"><?php echo esc_attr( $options['about-sec-title-des'] ); ?></p>
+                        <p class="pr-lg-5"><?php echo wp_kses_post( $options['about-sec-title-des'] ); ?></p>
                     <?php endif; ?>
 
                     <?php
@@ -32,11 +32,11 @@ if( !empty( $options['about-sec-title-p'] ) || !empty( $options['about-sec-title
                                 ?>
                                 <div class="about-icon-box style-2">
                                     <div class="icon">
-                                        <i class="<?php echo esc_attr( $repeater_abt_box['about-sec-box-icon'] ); ?>"></i>
+                                        <i class="<?php echo wp_kses_post( $repeater_abt_box['about-sec-box-icon'] ); ?>"></i>
                                     </div>
                                     <div class="content">
-                                        <h3><?php echo esc_html( $repeater_abt_box['about-sec-box-title'] ); ?></h3>
-                                        <p><?php echo esc_attr( $repeater_abt_box['about-sec-box-des'] ); ?></p>
+                                        <h3><?php echo wp_kses_post( $repeater_abt_box['about-sec-box-title'] ); ?></h3>
+                                        <p><?php echo wp_kses_post( $repeater_abt_box['about-sec-box-des'] ); ?></p>
                                     </div>
                                 </div>
                                 <?php
@@ -65,11 +65,11 @@ if( !empty( $options['about-sec-title-p'] ) || !empty( $options['about-sec-title
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="single-features-item">
                                 <div class="icon">
-                                    <i class="<?php echo isset( $repeater_abt_feature['about-sec-ft-item-icon'] ) ? esc_attr( $repeater_abt_feature['about-sec-ft-item-icon'] ) : ''; ?>"></i>
+                                    <i class="<?php echo isset( $repeater_abt_feature['about-sec-ft-item-icon'] ) ? wp_kses_post( $repeater_abt_feature['about-sec-ft-item-icon'] ) : ''; ?>"></i>
                                 </div>
                                 <div class="content">
-                                    <h3><?php echo isset( $repeater_abt_feature['about-sec-ft-item-title'] ) ? esc_html( $repeater_abt_feature['about-sec-ft-item-title'] ) : ''; ?></h3>
-                                    <p><?php echo isset( $repeater_abt_feature['about-sec-ft-item-des'] ) ? esc_attr( $repeater_abt_feature['about-sec-ft-item-des'] ) : ''; ?></p>
+                                    <h3><?php echo isset( $repeater_abt_feature['about-sec-ft-item-title'] ) ? wp_kses_post( $repeater_abt_feature['about-sec-ft-item-title'] ) : ''; ?></h3>
+                                    <p><?php echo isset( $repeater_abt_feature['about-sec-ft-item-des'] ) ? wp_kses_post( $repeater_abt_feature['about-sec-ft-item-des'] ) : ''; ?></p>
                                 </div>
                             </div>
                         </div>

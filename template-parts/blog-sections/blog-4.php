@@ -12,8 +12,8 @@ if(!empty($options['v4-blog-p']) || !empty($options['v4-blog-h1']) || post_type_
         <div class="row">
             <div class="col-12">
                 <div class="section-title text-center">
-                    <a class="theme-btn-sm mb-15" data-aos="fade-up"><?php echo isset( $options['v4-blog-p'] ) ? esc_html( $options['v4-blog-p'] ) : ''; ?></a>
-                    <h1 data-aos="fade-up" data-aos-delay="100"><?php echo isset( $options['v4-blog-h1'] ) ? esc_html( $options['v4-blog-h1'] ) : ''; ?></h1>
+                    <a class="theme-btn-sm mb-15" data-aos="fade-up"><?php echo isset( $options['v4-blog-p'] ) ? wp_kses_post( $options['v4-blog-p'] ) : ''; ?></a>
+                    <h1 data-aos="fade-up" data-aos-delay="100"><?php echo isset( $options['v4-blog-h1'] ) ? wp_kses_post( $options['v4-blog-h1'] ) : ''; ?></h1>
                 </div>
             </div>
         </div>
@@ -40,22 +40,22 @@ if(!empty($options['v4-blog-p']) || !empty($options['v4-blog-h1']) || post_type_
                                 <div class="post-top-meta d-flex flex-wrap align-items-center">
                                     <div class="post-date">
                                         <a href="<?php echo esc_url( get_the_permalink() ); ?>">
-                                            <i class="fal fa-calendar-alt"></i> <?php echo esc_html( get_the_date() ); ?>
+                                            <i class="fal fa-calendar-alt"></i> <?php echo wp_kses_post( get_the_date() ); ?>
                                         </a>
                                     </div>
                                     <div class="post-comment">
                                         <a href="<?php echo esc_url( get_the_permalink() ); ?>">
-                                            <i class="icon-message"></i> <?php echo esc_html( get_comments_number() ); ?>
+                                            <i class="icon-message"></i> <?php echo wp_kses_post( get_comments_number() ); ?>
                                         </a>
                                     </div>
                                 </div>
-                                <h3><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a></h3>
+                                <h3><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h3>
                                 <div class="excerpt">
                                     <p><?php echo get_the_excerpt(); ?></p>
                                 </div>
                                 <div class="btn-link-share d-flex justify-content-between align-items-center">
                                     <a href="<?php echo esc_url( get_the_permalink() ); ?>">read more <i class="icon-arrow-right-1"></i></a>
-                                    <a href="#"><i class="fal fa-share-alt"></i></a>
+                                    <a href="#" style="display: none;"><i class="fal fa-share-alt"></i></a>
                                 </div>
                             </div>
                         </div>

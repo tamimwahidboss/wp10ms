@@ -14,10 +14,10 @@ if(!empty($options['v1-funfact-box-rep']) ) :
                     ?>
                     <div class="single-funfact-item">
                         <div class="icon">
-                            <i class="<?php echo esc_attr( $repeater_box['v1-funfact-box-icon'] ); ?>"></i>
+                            <i class="<?php echo wp_kses_post( $repeater_box['v1-funfact-box-icon'] ); ?>"></i>
                         </div>
-                        <h3><?php echo esc_html( $repeater_box['v1-funfact-box-h3'] ); ?></h3>
-                        <p><?php echo esc_attr( $repeater_box['v1-funfact-box-p'] ); ?></p>
+                        <h3><?php echo wp_kses_post( $repeater_box['v1-funfact-box-h3'] ); ?></h3>
+                        <p><?php echo wp_kses_post( $repeater_box['v1-funfact-box-p'] ); ?></p>
                     </div>
                     <?php
                 }

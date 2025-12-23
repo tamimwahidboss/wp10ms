@@ -8,7 +8,7 @@ if(!empty($options['v6-cta-sec-h1']) || !empty($repeater_ctas) ) :
         <div class="cta-content">
             <div class="row align-items-center">
                 <div class="col-xl-7 text-white col-12 text-center text-xl-left">
-                    <h1><?php echo isset( $options['v6-cta-sec-h1'] ) ? esc_attr( $options['v6-cta-sec-h1'] ) : ''; ?></h1>
+                    <h1><?php echo isset( $options['v6-cta-sec-h1'] ) ? wp_kses_post( $options['v6-cta-sec-h1'] ) : ''; ?></h1>
                 </div>
                 <div class="col-xl-5 col-12">
                     <div class="btn-wraper d-flex flex-wrap justify-content-xl-end mt-2 mt-md-4 mt-xl-0">
@@ -16,8 +16,8 @@ if(!empty($options['v6-cta-sec-h1']) || !empty($repeater_ctas) ) :
                         $repeater_ctas = isset( $options['v6-cta-sec-rep'] ) ? $options['v6-cta-sec-rep'] : array();
                         foreach( $repeater_ctas as $repeater_cta ) {
                             $cta_url = isset( $repeater_cta['v6-cta-btn-link']['url'] ) ? esc_url( $repeater_cta['v6-cta-btn-link']['url'] ) : '#';
-                            $cta_text = isset( $repeater_cta['v6-cta-btn-link']['text'] ) ? esc_html( $repeater_cta['v6-cta-btn-link']['text'] ) : 'Click Here';
-                            $cta_icon = isset( $repeater_cta['v6-cta-btn-icon'] ) ? esc_attr( $repeater_cta['v6-cta-btn-icon'] ) : '';
+                            $cta_text = isset( $repeater_cta['v6-cta-btn-link']['text'] ) ? wp_kses_post( $repeater_cta['v6-cta-btn-link']['text'] ) : 'Click Here';
+                            $cta_icon = isset( $repeater_cta['v6-cta-btn-icon'] ) ? wp_kses_post( $repeater_cta['v6-cta-btn-icon'] ) : '';
                             ?>
                             <a href="<?php echo $cta_url; ?>" class="theme-btn"><?php echo $cta_text; ?><i class="<?php echo $cta_icon; ?>"></i></a>
                             <?php

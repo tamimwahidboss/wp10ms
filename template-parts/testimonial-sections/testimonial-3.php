@@ -12,10 +12,10 @@ if(!empty($options['v3-testimonial-p']) || !empty($options['v3-testimonial-h1'])
             <div class="col-md-8">
                 <div class="section-title">
                     <a class="theme-btn-sm mb-15" data-aos="fade-right">
-                        <?php echo isset( $options['v3-testimonial-p'] ) ? esc_html( $options['v3-testimonial-p'] ) : ''; ?>
+                        <?php echo isset( $options['v3-testimonial-p'] ) ? wp_kses_post( $options['v3-testimonial-p'] ) : ''; ?>
                     </a>
                     <h1 data-aos="fade-right" data-aos-delay="100">
-                        <?php echo isset( $options['v3-testimonial-h1'] ) ? esc_html( $options['v3-testimonial-h1'] ) : ''; ?>
+                        <?php echo isset( $options['v3-testimonial-h1'] ) ? wp_kses_post( $options['v3-testimonial-h1'] ) : ''; ?>
                     </h1>
                 </div>
 
@@ -28,7 +28,7 @@ if(!empty($options['v3-testimonial-p']) || !empty($options['v3-testimonial-h1'])
                                 <div class="icon">
                                     <i class="flaticon-right-quote"></i>
                                 </div>
-                                <h2><?php echo isset( $repeater_box['v3-testimonial-h2'] ) ? esc_html( $repeater_box['v3-testimonial-h2'] ) : ''; ?></h2>
+                                <h2><?php echo isset( $repeater_box['v3-testimonial-h2'] ) ? wp_kses_post( $repeater_box['v3-testimonial-h2'] ) : ''; ?></h2>
                                 <div class="client-info">
                                     <div class="client-bio">
                                         <p><?php echo isset( $repeater_box['v3-testimonial-details'] ) ? $repeater_box['v3-testimonial-details'] : ''; ?></p>

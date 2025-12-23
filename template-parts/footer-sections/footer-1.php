@@ -36,7 +36,7 @@ $options = get_option( 'wp10ms_options' );
                 // Ensure $options is defined and has the 'ft-cp-text' key
                 if ( isset( $options['ft-cp-text'] ) && !empty( $options['ft-cp-text'] ) ) {
                     // Echo the 'ft-cp-text' value, escaping it for safe output
-                    echo esc_html( $options['ft-cp-text'] );
+                    echo wp_kses_post( $options['ft-cp-text'] );
                 } else {
                     // Provide a default message if 'ft-cp-text' is not set or empty
                     echo '© ' . date('Y') . ' Your Company. All rights reserved.';

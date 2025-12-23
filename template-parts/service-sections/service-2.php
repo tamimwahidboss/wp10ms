@@ -11,10 +11,10 @@ if(!empty($options['v2-service-p']) || !empty($options['v2-service-h1']) || !emp
             <div class="col-12 col-lg-12">
                 <div class="section-title text-white text-center">
                     <p>
-                        <?php echo isset( $options['v2-service-p'] ) ? esc_attr( $options['v2-service-p'] ) : ''; ?>
+                        <?php echo isset( $options['v2-service-p'] ) ? wp_kses_post( $options['v2-service-p'] ) : ''; ?>
                     </p>
                     <h1>
-                        <?php echo isset( $options['v2-service-h1'] ) ? esc_html( $options['v2-service-h1'] ) : ''; ?>
+                        <?php echo isset( $options['v2-service-h1'] ) ? wp_kses_post( $options['v2-service-h1'] ) : ''; ?>
                     </h1>
                 </div>
             </div>
@@ -36,25 +36,25 @@ if(!empty($options['v2-service-p']) || !empty($options['v2-service-h1']) || !emp
                             <div class="content-visible">
                                 <h4>
                                     <a href="<?php echo isset( $repeater_box['v2-service-box-pop-link']['url'] ) ? esc_url( $repeater_box['v2-service-box-pop-link']['url'] ) : '#'; ?>">
-                                        <?php echo isset( $repeater_box['v2-service-box-pop-link']['text'] ) ? esc_html( $repeater_box['v2-service-box-pop-link']['text'] ) : ''; ?>
+                                        <?php echo isset( $repeater_box['v2-service-box-pop-link']['text'] ) ? wp_kses_post( $repeater_box['v2-service-box-pop-link']['text'] ) : ''; ?>
                                     </a>
                                 </h4>
                                 <p>
-                                    <?php echo isset( $repeater_box['v2-service-box-p'] ) ? esc_attr( $repeater_box['v2-service-box-p'] ) : ''; ?>
+                                    <?php echo isset( $repeater_box['v2-service-box-p'] ) ? wp_kses_post( $repeater_box['v2-service-box-p'] ) : ''; ?>
                                 </p>
                             </div>
                             <div class="content-overlay">
                                 <h4>
                                     <a href="<?php echo isset( $repeater_box['v2-service-box-pop-link']['url'] ) ? esc_url( $repeater_box['v2-service-box-pop-link']['url'] ) : '#'; ?>">
-                                        <?php echo isset( $repeater_box['v2-service-box-pop-link']['text'] ) ? esc_html( $repeater_box['v2-service-box-pop-link']['text'] ) : ''; ?>
+                                        <?php echo isset( $repeater_box['v2-service-box-pop-link']['text'] ) ? wp_kses_post( $repeater_box['v2-service-box-pop-link']['text'] ) : ''; ?>
                                     </a>
                                 </h4>
                                 <p>
-                                    <?php echo isset( $repeater_box['v2-service-box-pop-p'] ) ? esc_attr( $repeater_box['v2-service-box-pop-p'] ) : ''; ?>
+                                    <?php echo isset( $repeater_box['v2-service-box-pop-p'] ) ? wp_kses_post( $repeater_box['v2-service-box-pop-p'] ) : ''; ?>
                                 </p>
                                 <a href="<?php echo isset( $repeater_box['v2-service-box-pop-link']['url'] ) ? esc_url( $repeater_box['v2-service-box-pop-link']['url'] ) : '#'; ?>" class="read-link">
-                                    <?php echo isset( $repeater_box['v2-service-box-pop-link']['text'] ) ? esc_html( $repeater_box['v2-service-box-pop-link']['text'] ) : ''; ?>
-                                    <i class="<?php echo isset( $repeater_box['v2-service-box-popupBtn-icon'] ) ? esc_attr( $repeater_box['v2-service-box-popupBtn-icon'] ) : ''; ?>"></i>
+                                    <?php echo isset( $repeater_box['v2-service-box-pop-link']['text'] ) ? wp_kses_post( $repeater_box['v2-service-box-pop-link']['text'] ) : ''; ?>
+                                    <i class="<?php echo isset( $repeater_box['v2-service-box-popupBtn-icon'] ) ? wp_kses_post( $repeater_box['v2-service-box-popupBtn-icon'] ) : ''; ?>"></i>
                                 </a>
                             </div>
                         </div>

@@ -10,9 +10,9 @@ if(!empty($options['v2-blog-span'] ) || !empty($options['v2-blog-p']) || !empty(
         <div class="row mb-30">
             <div class="col-12 col-lg-12">
                 <div class="section-title style-3 text-center">
-                    <span><?php echo isset( $options['v2-blog-span'] ) ? esc_html( $options['v2-blog-span'] ) : ''; ?></span>
-                    <p><?php echo isset( $options['v2-blog-p'] ) ? esc_attr( $options['v2-blog-p'] ) : ''; ?></p>
-                    <h1><?php echo isset( $options['v2-blog-h1'] ) ? esc_html( $options['v2-blog-h1'] ) : ''; ?></h1>
+                    <span><?php echo isset( $options['v2-blog-span'] ) ? wp_kses_post( $options['v2-blog-span'] ) : ''; ?></span>
+                    <p><?php echo isset( $options['v2-blog-p'] ) ? wp_kses_post( $options['v2-blog-p'] ) : ''; ?></p>
+                    <h1><?php echo isset( $options['v2-blog-h1'] ) ? wp_kses_post( $options['v2-blog-h1'] ) : ''; ?></h1>
                 </div>
             </div>
         </div>
@@ -34,9 +34,9 @@ if(!empty($options['v2-blog-span'] ) || !empty($options['v2-blog-p']) || !empty(
                             <div class="blog-featured-thumb bg-cover" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"></div>
                             <div class="content">
                                 <div class="post-author">
-                                    <a href="<?php echo esc_url( get_the_author_link() ); ?>"><i class="fal fa-user-circle"></i> <?php echo esc_html( get_the_author() ); ?></a>
+                                    <a href="<?php echo esc_url( get_the_author_link() ); ?>"><i class="fal fa-user-circle"></i> <?php echo wp_kses_post( get_the_author() ); ?></a>
                                 </div>
-                                <h3><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a></h3>
+                                <h3><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h3>
                                 <div class="btn-link-share">
                                     <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="theme-btn minimal-btn">read more <i class="fas fa-arrow-right"></i></a>
                                     <a href="#"><i class="fal fa-share-alt"></i></a>

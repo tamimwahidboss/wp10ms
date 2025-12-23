@@ -18,7 +18,7 @@ if(!empty($options['v1-brand-rep']) ) :
                         $logo_url = esc_url( $repeater_box['v1-brand-logo']['url'] );
                         ?>
                         <div class="single-client">
-                            <img src="<?php echo $logo_url; ?>" alt="<?php echo esc_attr( get_post_meta( get_the_ID(), 'client_brand_alt_text', true ) ); ?>">
+                            <img src="<?php echo $logo_url; ?>" alt="<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'client_brand_alt_text', true ) ); ?>">
                         </div>
                         <?php
                     }

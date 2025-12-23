@@ -10,8 +10,8 @@ if(!empty($options['v4-service-p']) || !empty($options['v4-service-h1']) || !emp
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12 text-center">
                 <div class="section-title mb-30">
-                    <p><?php echo isset( $options['v4-service-p'] ) ? esc_attr( $options['v4-service-p'] ) : ''; ?></p>
-                    <h1><?php echo isset( $options['v4-service-h1'] ) ? esc_html( $options['v4-service-h1'] ) : ''; ?></h1>
+                    <p><?php echo isset( $options['v4-service-p'] ) ? wp_kses_post( $options['v4-service-p'] ) : ''; ?></p>
+                    <h1><?php echo isset( $options['v4-service-h1'] ) ? wp_kses_post( $options['v4-service-h1'] ) : ''; ?></h1>
                 </div>
             </div>
         </div>
@@ -28,11 +28,11 @@ if(!empty($options['v4-service-p']) || !empty($options['v4-service-h1']) || !emp
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                             <div class="icon">
-                                <i class="<?php echo isset( $repeater_box['v4-service-box-icon'] ) ? esc_attr( $repeater_box['v4-service-box-icon'] ) : ''; ?>"></i>
+                                <i class="<?php echo isset( $repeater_box['v4-service-box-icon'] ) ? wp_kses_post( $repeater_box['v4-service-box-icon'] ) : ''; ?>"></i>
                             </div>
                             <div class="content">
-                                <h3><?php echo isset( $repeater_box['v4-service-box-title'] ) ? esc_html( $repeater_box['v4-service-box-title'] ) : ''; ?></h3>
-                                <p><?php echo isset( $repeater_box['v4-service-box-p'] ) ? esc_attr( $repeater_box['v4-service-box-p'] ) : ''; ?></p>
+                                <h3><?php echo isset( $repeater_box['v4-service-box-title'] ) ? wp_kses_post( $repeater_box['v4-service-box-title'] ) : ''; ?></h3>
+                                <p><?php echo isset( $repeater_box['v4-service-box-p'] ) ? wp_kses_post( $repeater_box['v4-service-box-p'] ) : ''; ?></p>
                             </div>
                         </div>
                     </div>

@@ -10,9 +10,9 @@ if ( !empty( $options['v5-hero-slide-rep'] ) ) :?>
         if ( isset( $options['v5-hero-slide-rep'] ) && is_array( $options['v5-hero-slide-rep'] ) ) {
             foreach( $options['v5-hero-slide-rep'] as $repeater_slider ) {
                 $banner_url = isset( $repeater_slider['v5-hero-banner']['url'] ) ? esc_url( $repeater_slider['v5-hero-banner']['url'] ) : '';
-                $hero_a = isset( $repeater_slider['v5-hero-a'] ) ? esc_html( $repeater_slider['v5-hero-a'] ) : '';
-                $hero_h1 = isset( $repeater_slider['v5-hero-h1'] ) ? esc_html( $repeater_slider['v5-hero-h1'] ) : '';
-                $hero_p = isset( $repeater_slider['v5-hero-p'] ) ? esc_attr( $repeater_slider['v5-hero-p'] ) : '';
+                $hero_a = isset( $repeater_slider['v5-hero-a'] ) ? wp_kses_post( $repeater_slider['v5-hero-a'] ) : '';
+                $hero_h1 = isset( $repeater_slider['v5-hero-h1'] ) ? wp_kses_post( $repeater_slider['v5-hero-h1'] ) : '';
+                $hero_p = isset( $repeater_slider['v5-hero-p'] ) ? wp_kses_post( $repeater_slider['v5-hero-p'] ) : '';
                 $repeater_boxes = isset( $repeater_slider['v5-hero-btn-rep'] ) ? $repeater_slider['v5-hero-btn-rep'] : [];
 
                 ?>
@@ -31,8 +31,8 @@ if ( !empty( $options['v5-hero-slide-rep'] ) ) :?>
                                     <?php
                                     foreach( $repeater_boxes as $repeater_box ) {
                                         $btn_url = isset( $repeater_box['v5-hero-btn']['url'] ) ? esc_url( $repeater_box['v5-hero-btn']['url'] ) : '#';
-                                        $btn_text = isset( $repeater_box['v5-hero-btn']['text'] ) ? esc_html( $repeater_box['v5-hero-btn']['text'] ) : '';
-                                        $btn_icon = isset( $repeater_box['v5-hero-btn-icon'] ) ? esc_attr( $repeater_box['v5-hero-btn-icon'] ) : '';
+                                        $btn_text = isset( $repeater_box['v5-hero-btn']['text'] ) ? wp_kses_post( $repeater_box['v5-hero-btn']['text'] ) : '';
+                                        $btn_icon = isset( $repeater_box['v5-hero-btn-icon'] ) ? wp_kses_post( $repeater_box['v5-hero-btn-icon'] ) : '';
                                         ?>
                                         <a href="<?php echo $btn_url; ?>" class="theme-btn"><?php echo $btn_text; ?> <i class="<?php echo $btn_icon; ?>"></i></a>
                                         <?php

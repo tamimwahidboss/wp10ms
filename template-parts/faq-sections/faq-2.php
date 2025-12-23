@@ -15,8 +15,8 @@ if(!empty($repeater_boxes) ) :
                             $faqNum = 1;
                             $repeater_boxes = isset( $options['v2-faq-rep'] ) ? $options['v2-faq-rep'] : array();
                             foreach( $repeater_boxes as $repeater_box ) {
-                                $faq_title = isset( $repeater_box['v2-faq-title'] ) ? esc_html( $repeater_box['v2-faq-title'] ) : '';
-                                $faq_des = isset( $repeater_box['v2-faq-des'] ) ? esc_html( $repeater_box['v2-faq-des'] ) : '';
+                                $faq_title = isset( $repeater_box['v2-faq-title'] ) ? wp_kses_post( $repeater_box['v2-faq-title'] ) : '';
+                                $faq_des = isset( $repeater_box['v2-faq-des'] ) ? wp_kses_post( $repeater_box['v2-faq-des'] ) : '';
                                 ?>
                                 <div class="card">
                                     <div class="card-header" id="faq<?php echo $faqNum; ?>">
@@ -47,8 +47,8 @@ if(!empty($repeater_boxes) ) :
                             $faqNum = 11;
                             $repeater_boxes = isset( $options['v2-faq-r8-rep'] ) ? $options['v2-faq-r8-rep'] : array();
                             foreach( $repeater_boxes as $repeater_box ) {
-                                $faq_title = isset( $repeater_box['v2-faq-r8-title'] ) ? esc_html( $repeater_box['v2-faq-r8-title'] ) : '';
-                                $faq_des = isset( $repeater_box['v2-faq-r8-des'] ) ? esc_html( $repeater_box['v2-faq-r8-des'] ) : '';
+                                $faq_title = isset( $repeater_box['v2-faq-r8-title'] ) ? wp_kses_post( $repeater_box['v2-faq-r8-title'] ) : '';
+                                $faq_des = isset( $repeater_box['v2-faq-r8-des'] ) ? wp_kses_post( $repeater_box['v2-faq-r8-des'] ) : '';
                                 ?>
                                 <div class="card">
                                     <div class="card-header" id="faq<?php echo $faqNum; ?>">

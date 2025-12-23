@@ -19,18 +19,18 @@
                                             $category_link = get_category_link( $category->term_id );
                                             ?>
                                             <a href="<?php echo esc_url( $category_link ); ?>">
-                                                <?php echo esc_html( $category->name ); ?>
+                                                <?php echo wp_kses_post( $category->name ); ?>
                                             </a>
                                             <?php
                                         }
                                     }
                                     ?>
                                 </div>
-                                <h2><?php echo esc_html( get_the_title() ); ?></h2>
+                                <h2><?php echo wp_kses_post( get_the_title() ); ?></h2>
                                 <div class="post-meta">
                                     <span><i class="fal fa-eye"></i>232 Views</span>
-                                    <span><i class="fal fa-comments"></i><?php echo esc_html( get_comments_number() ); ?> Comments</span>
-                                    <span><i class="fal fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>
+                                    <span><i class="fal fa-comments"></i><?php echo wp_kses_post( get_comments_number() ); ?> Comments</span>
+                                    <span><i class="fal fa-calendar-alt"></i><?php echo wp_kses_post( get_the_date() ); ?></span>
                                 </div>
                                 <?php the_content(); ?>
                             </div>
@@ -46,7 +46,7 @@
                                     if ( $post_tags ) {
                                         foreach ( $post_tags as $tag ) {
                                             $tag_link = get_tag_link( $tag->term_id );
-                                            echo '<a href="' . esc_url( $tag_link ) . '">' . esc_html( $tag->name ) . '</a>';
+                                            echo '<a href="' . esc_url( $tag_link ) . '">' . wp_kses_post( $tag->name ) . '</a>';
                                         }
                                     }
                                     ?>
@@ -94,9 +94,9 @@
                                                 <div class="featured-thumb bg-cover" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"></div>
                                                 <div class="post-content">
                                                     <div class="post-date">
-                                                        <span><i class="fal fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>
+                                                        <span><i class="fal fa-calendar-alt"></i><?php echo wp_kses_post( get_the_date() ); ?></span>
                                                     </div>
-                                                    <h4><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a></h4>
+                                                    <h4><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h4>
                                                     <?php the_excerpt(); ?>
                                                 </div>
                                             </div>

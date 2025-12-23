@@ -24,20 +24,20 @@ if( is_home() || is_archive() || is_search() ) {
                 <div class="single-blog-post">
                     <div class="post-featured-thumb bg-cover" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"></div>
                     <div class="post-content">
-                        <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a></h2>
+                        <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h2>
                         <div class="post-meta">
                             <?php
                             // Display categories
-                            echo '<span><i class="fal fa-eye"></i>' . esc_html( $viewCount ) . '</span>';
+                            echo '<span><i class="fal fa-eye"></i>' . wp_kses_post( $viewCount ) . '</span>';
                             ?>
-                            <span><i class="fal fa-comments"></i><?php echo esc_html( get_comments_number() ); ?> Comments</span>
-                            <span><i class="fal fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>
+                            <span><i class="fal fa-comments"></i><?php echo wp_kses_post( get_comments_number() ); ?> Comments</span>
+                            <span><i class="fal fa-calendar-alt"></i><?php echo wp_kses_post( get_the_date() ); ?></span>
                         </div>
                         <p><?php echo get_the_excerpt(); ?></p>
                         <div class="d-flex justify-content-between align-items-center mt-30">
                             <div class="author-info">
                                 <div class="author-img" style="background-image: url('<?php echo esc_url( get_avatar_url( get_the_author_meta('ID') ) ); ?>')"></div>
-                                <h5><a href="<?php echo esc_url( get_the_author_link() ); ?>">by <?php echo esc_html( get_the_author() ); ?></a></h5>
+                                <h5><a href="<?php echo esc_url( get_the_author_link() ); ?>">by <?php echo wp_kses_post( get_the_author() ); ?></a></h5>
                             </div>
                             <div class="post-link">
                                 <a href="<?php echo esc_url( get_the_permalink() ); ?>"><i class="fal fa-arrow-right"></i> Read More</a>
@@ -110,25 +110,25 @@ if( is_home() || is_archive() || is_search() ) {
                             $category_link = get_category_link( $category->term_id );
                             ?>
                             <a href="<?php echo esc_url( $category_link ); ?>">
-                                <?php echo esc_html( $category->name ); ?>
+                                <?php echo wp_kses_post( $category->name ); ?>
                             </a>
                             <?php
                         }
                     }
                     ?>
                 </div>
-                <h2><?php echo esc_html( get_the_title() ); ?></h2>
+                <h2><?php echo wp_kses_post( get_the_title() ); ?></h2>
                 <div class="post-meta">
                     <?php
                     if( $viewCount ) {
                         echo '<span><i class="fal fa-eye"></i>' . $viewCount . ' Views</span>';
                     }
                     if(!empty(get_comments_number())){
-                        echo '<span><i class="fal fa-comments"></i>' . esc_html( get_comments_number() ) . ' Comments</span>';
+                        echo '<span><i class="fal fa-comments"></i>' . wp_kses_post( get_comments_number() ) . ' Comments</span>';
                     } 
                     
                     if(!empty(get_the_date())){
-                        echo '<span><i class="fal fa-calendar-alt"></i>' . esc_html( get_the_date() ) . '</span>';
+                        echo '<span><i class="fal fa-calendar-alt"></i>' . wp_kses_post( get_the_date() ) . '</span>';
                     } ?>
                 </div>
                 <?php the_content(); ?>
@@ -145,7 +145,7 @@ if( is_home() || is_archive() || is_search() ) {
                     if ( $post_tags ) {
                         foreach ( $post_tags as $tag ) {
                             $tag_link = get_tag_link( $tag->term_id );
-                            echo '<a href="' . esc_url( $tag_link ) . '">' . esc_html( $tag->name ) . '</a>';
+                            echo '<a href="' . esc_url( $tag_link ) . '">' . wp_kses_post( $tag->name ) . '</a>';
                         }
                     }
                     ?>
@@ -192,9 +192,9 @@ if( is_home() || is_archive() || is_search() ) {
                                 <div class="featured-thumb bg-cover" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"></div>
                                 <div class="post-content">
                                     <div class="post-date">
-                                        <span><i class="fal fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>
+                                        <span><i class="fal fa-calendar-alt"></i><?php echo wp_kses_post( get_the_date() ); ?></span>
                                     </div>
-                                    <h4><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a></h4>
+                                    <h4><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h4>
                                     <?php the_excerpt(); ?>
                                 </div>
                             </div>
@@ -268,7 +268,7 @@ if( is_home() || is_archive() || is_search() ) {
                                     Clients
                                 </div>
                                 <div class="right-data">
-                                    <?php echo esc_html( $meta['v6-project-data-1'] ); ?>
+                                    <?php echo wp_kses_post( $meta['v6-project-data-1'] ); ?>
                                 </div>
                             </div>
                             <?php
@@ -280,7 +280,7 @@ if( is_home() || is_archive() || is_search() ) {
                                     Project
                                 </div>
                                 <div class="right-data">
-                                    <?php echo esc_html( $meta['v6-project-data-2'] ); ?>
+                                    <?php echo wp_kses_post( $meta['v6-project-data-2'] ); ?>
                                 </div>
                             </div>
                             <?php
@@ -292,7 +292,7 @@ if( is_home() || is_archive() || is_search() ) {
                                     Service
                                 </div>
                                 <div class="right-data">
-                                    <?php echo esc_html( $meta['v6-project-data-3'] );?>
+                                    <?php echo wp_kses_post( $meta['v6-project-data-3'] );?>
                                 </div>
                             </div>
                             <?php
@@ -321,7 +321,7 @@ if( is_home() || is_archive() || is_search() ) {
                                     Date
                                 </div>
                                 <div class="right-data">
-                                    <?php echo esc_html( $meta['v6-project-data-5'] ); ?>
+                                    <?php echo wp_kses_post( $meta['v6-project-data-5'] ); ?>
                                 </div>
                             </div>
                             <?php endif; ?>

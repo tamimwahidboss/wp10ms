@@ -11,8 +11,8 @@ if(!empty($options['faq-sec-banner']['url']) || !empty($options['faq-sec-title-p
             <div class="col-xl-5 col-lg-6 offset-lg-6 offset-xl-7">
                 <div class="col-12 col-lg-12 mb-40">
                     <div class="section-title">
-                        <p><?php echo isset( $options['faq-sec-title-p'] ) ? esc_attr( $options['faq-sec-title-p'] ) : ''; ?></p>
-                        <h1><?php echo isset( $options['faq-sec-title-h1'] ) ? esc_html( $options['faq-sec-title-h1'] ) : ''; ?></h1>
+                        <p><?php echo isset( $options['faq-sec-title-p'] ) ? wp_kses_post( $options['faq-sec-title-p'] ) : ''; ?></p>
+                        <h1><?php echo isset( $options['faq-sec-title-h1'] ) ? wp_kses_post( $options['faq-sec-title-h1'] ) : ''; ?></h1>
                     </div>
                 </div>
 
@@ -23,7 +23,7 @@ if(!empty($options['faq-sec-banner']['url']) || !empty($options['faq-sec-title-p
                             $repeater_faqs = isset( $options['faq-sec-acc-rep'] ) ? $options['faq-sec-acc-rep'] : array();
                             $faqNum = 1;
                             foreach( $repeater_faqs as $repeater_faq ) {
-                                $faq_title = isset( $repeater_faq['faq-sec-acc-title'] ) ? esc_html( $repeater_faq['faq-sec-acc-title'] ) : '';
+                                $faq_title = isset( $repeater_faq['faq-sec-acc-title'] ) ? wp_kses_post( $repeater_faq['faq-sec-acc-title'] ) : '';
                                 $faq_description = isset( $repeater_faq['faq-sec-acc-des'] ) ? wp_kses_post( $repeater_faq['faq-sec-acc-des'] ) : '';
                                 ?>
                                 <div class="card">

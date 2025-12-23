@@ -11,10 +11,10 @@ if ( !empty( $options['v6-service-title-span'] ) || !empty( $options['v6-service
             <div class="col-12 text-center">
                 <div class="section-title">
                     <a class="theme-btn-sm mb-15" data-aos="fade-up">
-                        <?php echo isset( $options['v6-service-title-span'] ) ? esc_html( $options['v6-service-title-span'] ) : ''; ?>
+                        <?php echo isset( $options['v6-service-title-span'] ) ? wp_kses_post( $options['v6-service-title-span'] ) : ''; ?>
                     </a>
                     <h1 data-aos="fade-up" data-aos-delay="100">
-                        <?php echo isset( $options['v6-service-h1'] ) ? esc_html( $options['v6-service-h1'] ) : ''; ?>
+                        <?php echo isset( $options['v6-service-h1'] ) ? wp_kses_post( $options['v6-service-h1'] ) : ''; ?>
                     </h1>
                 </div>
             </div>
@@ -32,8 +32,8 @@ if ( !empty( $options['v6-service-title-span'] ) || !empty( $options['v6-service
                                         <img src="<?php echo esc_url( $service_box['v6-service-box-icon']['url'] ); ?>" alt="">
                                     <?php endif; ?>
                                 </div>
-                                <h3><a href="<?php echo isset( $service_box['v6-service-box-link']['url'] ) ? esc_url( $service_box['v6-service-box-link']['url'] ) : '#' ; ?>"><?php echo isset( $service_box['v6-service-box-h3'] ) ? esc_html( $service_box['v6-service-box-h3'] ) : ''; ?></a></h3>
-                                <p><?php echo isset( $service_box['v6-service-box-p'] ) ? esc_attr( $service_box['v6-service-box-p'] ) : ''; ?></p>
+                                <h3><a href="<?php echo isset( $service_box['v6-service-box-link']['url'] ) ? esc_url( $service_box['v6-service-box-link']['url'] ) : '#' ; ?>"><?php echo isset( $service_box['v6-service-box-h3'] ) ? wp_kses_post( $service_box['v6-service-box-h3'] ) : ''; ?></a></h3>
+                                <p><?php echo isset( $service_box['v6-service-box-p'] ) ? wp_kses_post( $service_box['v6-service-box-p'] ) : ''; ?></p>
                                 <a href="<?php echo isset( $service_box['v6-service-box-link']['url'] ) ? esc_url( $service_box['v6-service-box-link']['url'] ) : '#' ; ?>" class="read-more text-uppercase">
                                     read more <i class="icon-arrow-right-1"></i>
                                 </a>

@@ -10,8 +10,8 @@ if(!empty($options['v1-project-p']) || !empty($options['v1-project-h1']) || post
         <div class="row mb-50 align-items-center">
             <div class="col-12 col-md-5">
                 <div class="section-title">
-                    <p><?php echo isset($options['v1-project-p']) ? esc_attr($options['v1-project-p']) : ''; ?></p>
-                    <h1><?php echo isset($options['v1-project-h1']) ? esc_html($options['v1-project-h1']) : ''; ?></h1>
+                    <p><?php echo isset($options['v1-project-p']) ? wp_kses_post($options['v1-project-p']) : ''; ?></p>
+                    <h1><?php echo isset($options['v1-project-h1']) ? wp_kses_post($options['v1-project-h1']) : ''; ?></h1>
                 </div>
             </div>
 
@@ -29,7 +29,7 @@ if(!empty($options['v1-project-p']) || !empty($options['v1-project-h1']) || post
                         $first = true; // Track the first button
 
                         foreach ( $categories as $category ) {
-                            echo '<button data-filter=".' . esc_attr( $category->slug ) . '"' . ( $first ? ' class="active"' : '' ) . '>' . esc_html( $category->name ) . '</button>';
+                            echo '<button data-filter=".' . wp_kses_post( $category->slug ) . '"' . ( $first ? ' class="active"' : '' ) . '>' . esc_html( $category->name ) . '</button>';
                             $first = false; // Only the first button gets the "active" class
                         }
                     ?>
@@ -57,12 +57,12 @@ if(!empty($options['v1-project-p']) || !empty($options['v1-project-h1']) || post
 
                     if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) {
                         foreach ( $categories as $category ) {
-                            $category_slugs .= ' ' . esc_attr( $category->slug ); // for grid-item class
+                            $category_slugs .= ' ' . wp_kses_post( $category->slug ); // for grid-item class
                             $category_names .= esc_html( $category->name ) . ' '; // for displaying category names
                         }
                     }
             ?>
-                <div class="col-xl-4 col-md-6 grid-item<?php echo esc_attr( $category_slugs ); ?>">
+                <div class="col-xl-4 col-md-6 grid-item<?php echo wp_kses_post( $category_slugs ); ?>">
                     <div class="single-case-study">
                         <div class="features-thumb bg-cover" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"></div>
                         <div class="content">

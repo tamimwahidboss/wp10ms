@@ -9,8 +9,8 @@ if(!empty($options['v5-blog-sec-h6']) || !empty($options['v5-blog-sec-h2']) || p
         <div class="row">
             <div class="col-12 col-xl-6 col-md-6 offset-md-3 text-center">
                 <div class="section-title section__title_3 mb-30" data-aos="fade-up" data-aos-delay="100">
-                    <h6><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bage.svg' ); ?>" alt><?php echo isset( $options['v5-blog-sec-h6'] ) ? esc_html( $options['v5-blog-sec-h6'] ) : ''; ?></h6>
-                    <h2><?php echo isset( $options['v5-blog-sec-h2'] ) ? esc_html( $options['v5-blog-sec-h2'] ) : ''; ?></h2>
+                    <h6><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/home5/bage.svg' ); ?>" alt><?php echo isset( $options['v5-blog-sec-h6'] ) ? wp_kses_post( $options['v5-blog-sec-h6'] ) : ''; ?></h6>
+                    <h2><?php echo isset( $options['v5-blog-sec-h2'] ) ? wp_kses_post( $options['v5-blog-sec-h2'] ) : ''; ?></h2>
                 </div>
             </div>
         </div>
@@ -38,15 +38,15 @@ if(!empty($options['v5-blog-sec-h6']) || !empty($options['v5-blog-sec-h2']) || p
                                 <!-- Post Meta -->
                                 <div class="post-top-meta d-flex flex-wrap align-items-center">
                                     <div class="post-date">
-                                        <a href="<?php echo esc_url( get_the_permalink() ); ?>"><i class="fal fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></a>
+                                        <a href="<?php echo esc_url( get_the_permalink() ); ?>"><i class="fal fa-calendar-alt"></i><?php echo wp_kses_post( get_the_date() ); ?></a>
                                     </div>
                                     <div class="post-comment">
-                                        <a href="<?php echo esc_url( get_comments_link() ); ?>"><i class="icon-message"></i><?php echo esc_html( get_comments_number() ); ?> Comments</a>
+                                        <a href="<?php echo esc_url( get_comments_link() ); ?>"><i class="icon-message"></i><?php echo wp_kses_post( get_comments_number() ); ?> Comments</a>
                                     </div>
                                 </div>
 
                                 <!-- Post Title -->
-                                <h3><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a></h3>
+                                <h3><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_kses_post( get_the_title() ); ?></a></h3>
 
                                 <!-- Post Excerpt -->
                                 <div class="excerpt">
@@ -70,7 +70,7 @@ if(!empty($options['v5-blog-sec-h6']) || !empty($options['v5-blog-sec-h2']) || p
                                                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_permalink() ); ?>" target="_blank" rel="noopener noreferrer">
                                                     <i class="fab fa-facebook-f"></i> Facebook
                                                 </a>
-                                                <a href="https://twitter.com/share?url=<?php echo esc_url( get_permalink() ); ?>&text=<?php echo esc_html( get_the_title() ); ?>" target="_blank" rel="noopener noreferrer">
+                                                <a href="https://twitter.com/share?url=<?php echo esc_url( get_permalink() ); ?>&text=<?php echo wp_kses_post( get_the_title() ); ?>" target="_blank" rel="noopener noreferrer">
                                                     <i class="fab fa-twitter"></i> Twitter
                                                 </a>
                                                 <a href="https://api.whatsapp.com/send?text=<?php echo esc_url( get_permalink() ); ?>" target="_blank" rel="noopener noreferrer">
@@ -152,7 +152,7 @@ if(!empty($options['v5-blog-sec-h6']) || !empty($options['v5-blog-sec-h2']) || p
                                     $categories = get_the_category();
                                     if ( ! empty( $categories ) ) {
                                         // Display only the first category
-                                        echo esc_html( $categories[0]->name );
+                                        echo wp_kses_post( $categories[0]->name );
                                     }
                                     ?>
                                 </p>

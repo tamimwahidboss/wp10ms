@@ -11,8 +11,8 @@ if(!empty($options['v4-count-sec-rep'])) :
                 foreach( $options['v4-count-sec-rep'] as $repeater_count ) {
                     ?>
                     <div class="single-funfact-item">
-                        <h3><?php echo isset( $repeater_count['v4-count-sec-h3'] ) ? esc_html( $repeater_count['v4-count-sec-h3'] ) : ''; ?> <span>+</span> </h3>
-                        <p><?php echo isset( $repeater_count['v4-count-sec-p'] ) ? esc_attr( $repeater_count['v4-count-sec-p'] ) : ''; ?></p>
+                        <h3><?php echo isset( $repeater_count['v4-count-sec-h3'] ) ? wp_kses_post( $repeater_count['v4-count-sec-h3'] ) : ''; ?> <span>+</span> </h3>
+                        <p><?php echo isset( $repeater_count['v4-count-sec-p'] ) ? wp_kses_post( $repeater_count['v4-count-sec-p'] ) : ''; ?></p>
                     </div>
                     <?php
                 }

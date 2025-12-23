@@ -10,9 +10,9 @@ if(!empty($options['v1-prosess-span']) || !empty($options['v1-prosess-p']) || !e
         <div class="row">
             <div class="col-12 col-lg-12 text-center">
                 <div class="section-title style-3 mb-40">
-                    <span><?php echo isset( $options['v1-prosess-span'] ) ? esc_html( $options['v1-prosess-span'] ) : ''; ?></span>
-                    <p><?php echo isset( $options['v1-prosess-p'] ) ? esc_attr( $options['v1-prosess-p'] ) : ''; ?></p>
-                    <h1><?php echo isset( $options['v1-prosess-sec-h1'] ) ? esc_html( $options['v1-prosess-sec-h1'] ) : ''; ?></h1>
+                    <span><?php echo isset( $options['v1-prosess-span'] ) ? wp_kses_post( $options['v1-prosess-span'] ) : ''; ?></span>
+                    <p><?php echo isset( $options['v1-prosess-p'] ) ? wp_kses_post( $options['v1-prosess-p'] ) : ''; ?></p>
+                    <h1><?php echo isset( $options['v1-prosess-sec-h1'] ) ? wp_kses_post( $options['v1-prosess-sec-h1'] ) : ''; ?></h1>
                 </div>
             </div>
         </div>
@@ -27,11 +27,11 @@ if(!empty($options['v1-prosess-span']) || !empty($options['v1-prosess-p']) || !e
                         ?>
                         <div class="single-work-process">
                             <div class="icon">
-                                <i class="<?php echo isset( $repeater_box['v1-prosess-box-icon'] ) ? esc_attr( $repeater_box['v1-prosess-box-icon'] ) : ''; ?>"></i>
+                                <i class="<?php echo isset( $repeater_box['v1-prosess-box-icon'] ) ? wp_kses_post( $repeater_box['v1-prosess-box-icon'] ) : ''; ?>"></i>
                             </div>
                             <div class="content">
-                                <h3><?php echo isset( $repeater_box['v1-single-prosess-h3'] ) ? esc_html( $repeater_box['v1-single-prosess-h3'] ) : ''; ?></h3>
-                                <p><?php echo isset( $repeater_box['v1-single-prosess-p'] ) ? esc_attr( $repeater_box['v1-single-prosess-p'] ) : ''; ?></p>
+                                <h3><?php echo isset( $repeater_box['v1-single-prosess-h3'] ) ? wp_kses_post( $repeater_box['v1-single-prosess-h3'] ) : ''; ?></h3>
+                                <p><?php echo isset( $repeater_box['v1-single-prosess-p'] ) ? wp_kses_post( $repeater_box['v1-single-prosess-p'] ) : ''; ?></p>
                                 <span><?php echo $processNum++ ?></span>
                             </div>
                         </div>

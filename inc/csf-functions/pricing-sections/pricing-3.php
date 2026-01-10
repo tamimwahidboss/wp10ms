@@ -27,7 +27,7 @@ CSF::createSection( $prefix, array(
             'type'         => 'repeater',
             'title'        => 'Price Plan',
             'button_title' => 'Add More',
-            'max'          => '3',
+            'max'          => '12',
             'fields'       => array(
 
                 // Currency Symbol

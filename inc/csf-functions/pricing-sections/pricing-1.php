@@ -24,6 +24,7 @@ CSF::createSection( $prefix, array(
             'id'           => 'v1-pricing-rep',
             'type'         => 'repeater',
             'title'        => 'Add Client Pricing',
+			'max'          => '12',
             'button_title' => 'Add More',
             'fields'       => array(
 
@@ -84,6 +85,12 @@ CSF::createSection( $prefix, array(
                             'title' => 'Active/Deactive',
                         ),
                     ),
+                ),
+				// Button Text
+                array(
+                    'id'      => 'v1-price-btn',
+                    'type'    => 'link',
+                    'title'   => 'Button',
                 ),
             ),
         ),

@@ -55,7 +55,7 @@ if(!empty($options['v1-pricing-p']) || !empty($options['v1-pricing-h1']) || !emp
                             ?>
                         </ul>
                         <div class="buy-btn">
-                            <a href="contact.html" class="theme-btn">Get started <i class="fas fa-arrow-right"></i></a>
+                            <a href="<?php echo isset( $repeater_box['v1-price-btn']['url'] ) ? esc_url( $repeater_box['v1-price-btn']['url'] ) : '#' ?>" class="theme-btn"><?php echo isset( $repeater_box['v1-price-btn']['text'] ) ? wp_kses_post( $repeater_box['v1-price-btn']['text'] ) : 'Get Started'; ?> <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

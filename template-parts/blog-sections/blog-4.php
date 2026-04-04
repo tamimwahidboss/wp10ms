@@ -7,7 +7,7 @@ if(!empty($options['v4-blog-p']) || !empty($options['v4-blog-h1']) || post_type_
 ?>
 
 <!-- index 5 - content-area -->
-<section class="blog-section techex-landing-page" style="padding-bottom: 200px !important;">
+<section class="blog-section techex-landing-page">
     <div class="container">
         <div class="row">
             <div class="col-12">

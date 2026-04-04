@@ -45,17 +45,6 @@ if(!empty($options['top-header-info-rep']) || !empty($options['top-header-social
                             }
                             ?>
                         </div>
-                        |
-                        <div class="lan-select">
-                            <form>
-                                <select id="lan">
-                                    <option>English</option>
-                                    <option>China</option>
-                                    <option>Bangla</option>
-                                    <option>Hindi</option>
-                                </select>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -1,8 +1,8 @@
 /*
-Template: Techex - Information & Technology HTML Template
-Author: RRDevs
-Author URI: https://themeforest.net/user/rrdevs
-Description: Information & Technology HTML Template
+Template: WP10MS - Information & Technology HTML Template
+Author: WP10MS
+Author URI: https://wordpress10ms.com/
+Description: WP10MS is a modern and creative HTML template designed for information and technology websites. It offers a clean and professional design, making it suitable for showcasing tech-related content, products, and services. With its responsive layout and user-friendly features, WP10MS provides an excellent platform for IT companies, tech bloggers, startups, and anyone in the technology industry to create a stunning online presence.
 Version: 1.0
 */
 * {
@@ -194,6 +194,7 @@ input, textarea, button {
   src: local("Circular Std Medium Italic"), local("CircularStd-MediumItalic"), url("../fonts/CircularStd-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-MediumItalic.woff2") format("woff2"), url("../fonts/CircularStd-MediumItalic.woff") format("woff"), url("../fonts/CircularStd-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: "Circular Std";
@@ -201,6 +202,7 @@ input, textarea, button {
   src: local("Circular Std Black"), local("CircularStd-Black"), url("../fonts/CircularStd-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Black.woff2") format("woff2"), url("../fonts/CircularStd-Black.woff") format("woff"), url("../fonts/CircularStd-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Circular Std";
@@ -208,6 +210,7 @@ input, textarea, button {
   src: local("Circular Std Medium"), local("CircularStd-Medium"), url("../fonts/CircularStd-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Medium.woff2") format("woff2"), url("../fonts/CircularStd-Medium.woff") format("woff"), url("../fonts/CircularStd-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Circular Std";
@@ -215,6 +218,7 @@ input, textarea, button {
   src: local("Circular Std Bold"), local("CircularStd-Bold"), url("../fonts/CircularStd-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Bold.woff2") format("woff2"), url("../fonts/CircularStd-Bold.woff") format("woff"), url("../fonts/CircularStd-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Circular Std";
@@ -222,6 +226,7 @@ input, textarea, button {
   src: local("Circular Std Black Italic"), local("CircularStd-BlackItalic"), url("../fonts/CircularStd-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-BlackItalic.woff2") format("woff2"), url("../fonts/CircularStd-BlackItalic.woff") format("woff"), url("../fonts/CircularStd-BlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: "Circular Std Book";
@@ -229,6 +234,7 @@ input, textarea, button {
   src: local("Circular Std Book Italic"), local("CircularStd-BookItalic"), url("../fonts/CircularStd-BookItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-BookItalic.woff2") format("woff2"), url("../fonts/CircularStd-BookItalic.woff") format("woff"), url("../fonts/CircularStd-BookItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
+  font-display: optional;
 }
 @font-face {
   font-family: "Circular Std";
@@ -236,6 +242,7 @@ input, textarea, button {
   src: local("Circular Std Bold Italic"), local("CircularStd-BoldItalic"), url("../fonts/CircularStd-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-BoldItalic.woff2") format("woff2"), url("../fonts/CircularStd-BoldItalic.woff") format("woff"), url("../fonts/CircularStd-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: "Circular Std Book";
@@ -243,36 +250,42 @@ input, textarea, button {
   src: local("Circular Std Book"), local("CircularStd-Book"), url("../fonts/CircularStd-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd-Book.woff2") format("woff2"), url("../fonts/CircularStd-Book.woff") format("woff"), url("../fonts/CircularStd-Book.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: optional;
 }
 @font-face {
   font-family: "Nunito-Black";
   src: local("Nunito-Black"), local("Nunito-Black"), url("../fonts/Nunito-Black.woff2") format("woff2"), url("../fonts/Nunito-Black.woff") format("woff"), url("../fonts/Nunito-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Nunito-Bold";
   src: local("Nunito-Bold"), local("Nunito-Bold"), url("../fonts/Nunito-Bold.woff2") format("woff2"), url("../fonts/Nunito-Bold.woff") format("woff"), url("../fonts/Nunito-Bold.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Nunito-SemiBold";
   src: local("Nunito-SemiBold"), local("Nunito-SemiBold"), url("../fonts/Nunito-SemiBold.woff2") format("woff2"), url("../fonts/Nunito-SemiBold.woff") format("woff"), url("../fonts/Nunito-SemiBold.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Nunito-Regular";
   src: local("Nunito-Regular"), local("Nunito-Regular"), url("../fonts/Nunito-Regular.woff2") format("woff2"), url("../fonts/Nunito-Regular.woff") format("woff"), url("../fonts/Nunito-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: optional;
 }
 @font-face {
   font-family: "Nunito-Medium";
   src: local("Nunito-Medium"), local("Nunito-Medium"), url("../fonts/Nunito-Medium.woff2") format("woff2"), url("../fonts/Nunito-Medium.woff") format("woff"), url("../fonts/Nunito-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 /* --------------------------------------------
     Template Default Fonts & Fonts Styles
@@ -5921,8 +5934,8 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
 }
 
 .single-service {
-  margin-top: 40px;
-  padding-right: 30px;
+  /* margin-top: 40px; */
+  /* padding-right: 30px; */
 }
 .single-service .icon {
   font-size: 46px;
@@ -9993,7 +10006,7 @@ header.header-5 .main-header-wraper .header-search.show .search-box .form-group:
 }
 .widget_categories ul li a span {
   position: absolute;
-  width: 60px;
+  width: 35px;
   line-height: 53px;
   height: 100%;
   content: "";

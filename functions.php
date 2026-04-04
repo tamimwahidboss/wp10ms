@@ -1,40 +1,84 @@
 <?php
+/**
+ * WordPress10MS Theme Functions
+ * Optimized for Performance and Clean Architecture
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+    exit;
 }
 
 if ( ! defined( '_S_VERSION' ) ) {
-	define( '_S_VERSION', '1.0.0' );
+    define( '_S_VERSION', '1.0.0' );
 }
 
 /**
- * Implement the enqueue script.
+ * Defer non-critical CSS for performance
+ */
+function add_defer_to_style_tag( $html, $handle ) {
+    $styles_to_defer = array( 
+        'icons', 
+        'animate', 
+        'owl-carousel', 
+        'owl-theme', 
+        'aos'
+    );
+
+    if ( in_array( $handle, $styles_to_defer ) ) {
+        $html = str_replace( "rel='stylesheet'", "rel='preload' as='style'", $html );
+        $html = str_replace( "href=", "onload=\"this.onload=null;this.rel='stylesheet'\" href=", $html );
+        $html .= '<noscript>' . str_replace( "rel='preload' as='style'", "rel='stylesheet'", $html ) . '</noscript>';
+    }
+    return $html;
+}
+add_filter( 'style_loader_tag', 'add_defer_to_style_tag', 10, 2 );
+
+/**
+ * Theme Support
  */
 require get_template_directory() . '/inc/theme-support.php';
 
 /**
- * Implement the enqueue script.
+ * Enqueue Scripts & Styles
  */
 require get_template_directory() . '/inc/enqueue.php';
 
 /**
- * Implement the register script.
+ * Conditional Asset Loading (Performance Optimization)
+ */
+// require get_template_directory() . '/inc/conditional-assets.php';
+
+/**
+ * Register Widgets & Custom Post Types
  */
 require get_template_directory() . '/inc/register.php';
 
 /**
- * Implement the TGM required plugins.
+ * Service CPT Registration
+ */
+require get_template_directory() . '/inc/cpt-service.php';
+
+/**
+ * TGM Required Plugins
  */
 require get_template_directory() . '/inc/tgm/myactiveplugin.php';
 
 /**
- * Implement the codestar framework script.
+ * Codestar Framework Options
  */
 require get_template_directory() . '/inc/csf-options.php';
-// Implement the csf widgets script.
+
+/**
+ * Codestar Framework Widgets
+ */
 require get_template_directory() . '/inc/csf-widgets.php';
-// Implement the csf metabox script.
+
+/**
+ * Codestar Framework Metaboxes
+ */
 require get_template_directory() . '/inc/csf-metabox.php';
 
-
+/**
+ * Author Social Media Fields
+ */
+require get_template_directory() . '/inc/author-social-fields.php';

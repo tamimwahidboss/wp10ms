@@ -338,7 +338,7 @@ if( class_exists( 'CSF' ) ) {
     }
   }
 
-  // Create a categories widget
+// Create a categories widget
   CSF::createWidget( 'wp10ms_side_cat_widget', array(
     'title'       => 'WP10MS Categories',
     'classname'   => 'wp10ms-side-cat-widget',
@@ -361,10 +361,19 @@ if( class_exists( 'CSF' ) ) {
       echo '</div>';
       echo '<div class="widget_categories">';
       echo '<ul>';
-      foreach ( get_the_category() as $category ) {
+
+      // Fetch top 5 categories by post count
+      $categories = get_categories( array(
+        'orderby' => 'count',
+        'order'   => 'DESC',
+        'number'  => 5,
+      ) );
+
+      foreach ( $categories as $category ) {
         echo '<li><a href="' . esc_url( get_category_link( $category->term_id ) ) . '">';
         echo esc_html( $category->name ) . ' <span>' . esc_html( $category->count ) . '</span></a></li>';
       }
+
       echo '</ul>';
       echo '</div>';
       echo '</div>';

@@ -14,9 +14,9 @@ if ( !empty( $options['v5-hero-slide-rep'] ) ) :?>
                 $hero_h1 = isset( $repeater_slider['v5-hero-h1'] ) ? wp_kses_post( $repeater_slider['v5-hero-h1'] ) : '';
                 $hero_p = isset( $repeater_slider['v5-hero-p'] ) ? wp_kses_post( $repeater_slider['v5-hero-p'] ) : '';
                 $repeater_boxes = isset( $repeater_slider['v5-hero-btn-rep'] ) ? $repeater_slider['v5-hero-btn-rep'] : [];
-
                 ?>
                 <div class="single-slide bg-cover" style="background-image: url('<?php echo $banner_url; ?>')">
+					<img src="<?php echo $banner_url; ?>" fetchpriority="high" style="display: none;" aria-hidden="true">
                     <div class="container">
                         <div class="row">
                             <div class="col-12">

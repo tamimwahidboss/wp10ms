@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( '_S_VERSION' ) ) {
-    define( '_S_VERSION', '1.0.0' );
+    define( '_S_VERSION', '3.0.1' );
 }
 
 /**
- * Defer non-critical CSS for performance
+ * Defer non-critical CSS for performance 
  */
 function add_defer_to_style_tag( $html, $handle ) {
     $styles_to_defer = array( 

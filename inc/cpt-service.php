@@ -42,12 +42,12 @@ function wp10ms_register_service_cpt() {
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 
+        'rewrite'            => array(
             'slug'       => 'services',
             'with_front' => false,
         ),
         'capability_type'    => 'post',
-        'has_archive'        => true,
+        'has_archive'        => false,
         'hierarchical'       => false,
         'menu_position'      => 20,
         'menu_icon'          => 'dashicons-admin-tools',

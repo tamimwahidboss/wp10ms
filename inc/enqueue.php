@@ -39,14 +39,14 @@ function wp10ms_enqueue_files() {
     // wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/assets/js/jquery.easing.js', array(), _S_VERSION, true );
     // wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), _S_VERSION, true );
-    // wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), _S_VERSION, true ); // console error
     wp_enqueue_script( 'imageload', get_template_directory_uri() . '/assets/js/imageload.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'scrollUp', get_template_directory_uri() . '/assets/js/scrollUp.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/assets/js/magnific-popup.min.js', array(), _S_VERSION, true );
     // wp_enqueue_script( 'easypiechart', get_template_directory_uri() . '/assets/js/easypiechart.min.js', array(), _S_VERSION, true );
     // wp_enqueue_script( 'counterup', get_template_directory_uri() . '/assets/js/counterup.min.js', array(), _S_VERSION, true );
-    // wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/js/wow.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/js/wow.min.js', array(), _S_VERSION, true ); // console error
     wp_enqueue_script( 'metismenu', get_template_directory_uri() . '/assets/js/metismenu.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'timeline', get_template_directory_uri() . '/assets/js/timeline.min.js', array(), _S_VERSION, true );
     // wp_enqueue_script( 'ajax-mail', get_template_directory_uri() . '/assets/js/ajax-mail.js', array(), _S_VERSION, true );

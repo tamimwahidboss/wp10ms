@@ -62,14 +62,6 @@
     background: var(--primary-gradient);
 }
 
-.section-title {
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
 .section-description {
     font-size: 18px;
     color: var(--text-light);
@@ -245,7 +237,7 @@
 
 .btn-hero-outline:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
+    border: 2px solid #fff;
     color: #fff;
 }
 
@@ -416,32 +408,41 @@
     box-shadow: var(--shadow-md);
 }
 
+@media (max-width: 767px) {
+    .content-card {
+        padding: 30px;
+    }
+}
 .service-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
     font-size: 16px;
-    line-height: 1.8;
-    color: var(--text-light);
 }
-
-.service-content h2,
-.service-content h3,
-.service-content h4 {
-    color: var(--text-dark);
-    margin-top: 30px;
-    margin-bottom: 15px;
+.section-title {
+    font-size: 36px;
 }
-
-.service-content p {
-    margin-bottom: 20px;
+.wp-block-heading {
+    font-size: 28px;
+    margin-top: 24px;
 }
-
-.service-content ul,
-.service-content ol {
-    margin-bottom: 20px;
-    padding-left: 30px;
+@media (max-width: 768px) {
+    .section-title {
+    font-size: 32px;
+    }
+    .wp-block-heading {
+        font-size: 24px;
+        margin-top: 24px;
+    }
 }
-
-.service-content li {
-    margin-bottom: 10px;
+.service-content ul, .service-content ol {
+    padding-left: 20px !important;
+}
+.service-content ul li {
+    list-style: disc;
+}
+.service-content ol li {
+    list-style: decimal;
 }
 
 /* ===============================================
@@ -1128,7 +1129,7 @@
 
 .btn-cta-outline:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
+    border: 2px solid #fff;
     color: #fff;
 }
 

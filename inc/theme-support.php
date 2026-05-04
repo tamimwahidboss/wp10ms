@@ -92,6 +92,7 @@ function setPostViews($postID) {
         update_post_meta($postID, $count_key, $count);
     }
 }
+
 // Function to get the views
 function getPostViews($postID){
     $count_key = 'post_views_count';

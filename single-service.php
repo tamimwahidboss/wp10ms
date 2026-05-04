@@ -138,7 +138,7 @@ $related_services = isset( $service_meta['related_services'] ) ? $service_meta['
             <div class="col-12">
                 <div class="badges-wrapper" data-aos="fade-up">
                     <div class="badge-item">
-                        <i class="fas fa-shield-check"></i>
+                        <i class="fas fa-lock"></i>
                         <span>Secure Payment</span>
                     </div>
                     <div class="badge-item">
@@ -237,7 +237,7 @@ $related_services = isset( $service_meta['related_services'] ) ? $service_meta['
                         </div>
                         <h4>Need Help?</h4>
                         <p>Our experts are here to assist you</p>
-                        <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-contact">
+                        <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="btn btn-contact">
                             <i class="fas fa-comments"></i>
                             Chat With Us
                         </a>
@@ -414,14 +414,14 @@ $related_services = isset( $service_meta['related_services'] ) ? $service_meta['
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <span class="contact-label">Email Us</span>
-                                <a href="mailto:support@example.com">support@example.com</a>
+                                <a href="mailto:info@wordpress10ms.com">info@wordpress10ms.com</a>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <span class="contact-label">Call Us</span>
-                                <a href="tel:+1234567890">+123 456 7890</a>
+                                <a href="https://wa.me/+8801871083402" target="_blank">+8801871083402</a>
                             </div>
                         </div>
                     </div>
@@ -429,26 +429,46 @@ $related_services = isset( $service_meta['related_services'] ) ? $service_meta['
             </div>
             
             <div class="col-lg-6" data-aos="fade-left">
-                <div class="faq-accordion">
-                    <?php 
-                    $faq_index = 0;
-                    foreach ( $faq as $faq_item ) : 
-                        $question = isset( $faq_item['faq_question'] ) ? esc_html( $faq_item['faq_question'] ) : '';
-                        $answer   = isset( $faq_item['faq_answer'] ) ? wp_kses_post( $faq_item['faq_answer'] ) : '';
-                        
-                        if ( empty( $question ) || empty( $answer ) ) continue;
-                        $faq_index++;
-                    ?>
-                        <div class="faq-item <?php echo $faq_index === 1 ? 'active' : ''; ?>">
-                            <div class="faq-question" onclick="toggleFaq(this)">
-                                <h5><?php echo esc_html( $question ); ?></h5>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            <div class="faq-answer" style="<?php echo $faq_index === 1 ? 'display: block;' : ''; ?>">
-                                <?php echo wp_kses_post( $answer ); ?>
-                            </div>
+                <div class="faq-content">
+                    <div class="faq-accordion">
+                        <div id="accordion" class="accordion">
+                            <?php 
+                            $faqNum = 1;
+                            foreach ( $faq as $faq_item ) : 
+                                $question = isset( $faq_item['faq_question'] ) ? esc_html( $faq_item['faq_question'] ) : '';
+                                $answer   = isset( $faq_item['faq_answer'] ) ? wp_kses_post( $faq_item['faq_answer'] ) : '';
+                                
+                                if ( empty( $question ) || empty( $answer ) ) continue;
+                                
+                                // Determine if this is the first item to keep it open by default
+                                $is_first = ($faqNum === 1);
+                            ?>
+                                <div class="card" style="background-color: #f8f9fa!important;">
+                                    <div class="card-header" id="faqheader<?php echo $faqNum; ?>">
+                                        <p class="mb-0 text-capitalize">
+                                            <a class="<?php echo $is_first ? '' : 'collapsed'; ?>" 
+                                            role="button" 
+                                            data-toggle="collapse" 
+                                            aria-expanded="<?php echo $is_first ? 'true' : 'false'; ?>" 
+                                            href="#faq-<?php echo $faqNum; ?>">
+                                                <?php echo $question; ?>
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div id="faq-<?php echo $faqNum; ?>" 
+                                        class="collapse <?php echo $is_first ? 'show' : ''; ?>" 
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <?php echo $answer; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php 
+                                $faqNum++;
+                            endforeach; 
+                            ?>
                         </div>
-                    <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -456,22 +476,22 @@ $related_services = isset( $service_meta['related_services'] ) ? $service_meta['
 </section>
 
 <script>
-function toggleFaq(element) {
-    const faqItem = element.parentElement;
-    const isActive = faqItem.classList.contains('active');
+// function toggleFaq(element) {
+//     const faqItem = element.parentElement;
+//     const isActive = faqItem.classList.contains('active');
     
-    // Close all items
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-        item.querySelector('.faq-answer').style.display = 'none';
-    });
+//     // Close all items
+//     document.querySelectorAll('.faq-item').forEach(item => {
+//         item.classList.remove('active');
+//         item.querySelector('.faq-answer').style.display = 'none';
+//     });
     
-    // Open clicked item if it wasn't active
-    if (!isActive) {
-        faqItem.classList.add('active');
-        faqItem.querySelector('.faq-answer').style.display = 'block';
-    }
-}
+//     // Open clicked item if it wasn't active
+//     if (!isActive) {
+//         faqItem.classList.add('active');
+//         faqItem.querySelector('.faq-answer').style.display = 'block';
+//     }
+// }
 </script>
 <?php endif; ?>
 
@@ -499,16 +519,16 @@ function toggleFaq(element) {
                             <i class="fas fa-rocket"></i>
                             <?php echo esc_html( $cta_btn_text ); ?>
                         </a>
-                        <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="btn btn-cta-outline">
+                        <a href="https://wa.me/+8801871083402" class="btn btn-cta-outline" target="_blank">
                             <i class="fas fa-phone"></i>
                             Talk to Expert
                         </a>
                     </div>
                     
-                    <div class="cta-trust">
+<!--                     <div class="cta-trust">
                         <i class="fas fa-users"></i>
                         <span>Join 1,000+ satisfied customers</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
